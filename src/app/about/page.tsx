@@ -1,0 +1,7 @@
+import { Rocket, Heart, Eye, Sprout, MapPin } from 'lucide-react';
+import { PageHero, SectionHeading, CTA, ButtonLink } from '@/components/ui';
+import { about } from '@/data/about';
+import { pageMetadata } from '@/lib/seo';
+export const metadata = pageMetadata('About Your Growth Buddy', about.intro, '/about');
+const icons = [Eye, Sprout, Heart, MapPin];
+export default function AboutPage() { return <><PageHero eyebrow="Meet MyBrandsBuddy" title={<>Your brand.<br/><span className="gradient-text">Our mission.</span></>} description={about.intro}/><section className="section"><div className="container about-story"><div><SectionHeading eyebrow="Small business. Big heart." title="Good businesses deserve a bigger stage."/>{about.story.map(p => <p key={p}>{p}</p>)}<div style={{ marginTop: 26 }}><ButtonLink>Meet your growth buddy</ButtonLink></div></div><div className="about-poster dark"><Rocket aria-hidden="true" strokeWidth={1}/><strong>Small<br/>businesses.<br/><span className="gradient-text">Bigger<br/>tomorrows.</span></strong><small>Your growth story starts with you.</small></div></div></section><section className="section why-section"><div className="container"><SectionHeading eyebrow="What we bring to the table" title="Good work starts with good values."/><div className="values-grid">{about.values.map((value,i) => { const Glyph = icons[i]; return <article key={value.title}><Glyph aria-hidden="true"/><h3>{value.title}</h3><p>{value.description}</p></article>; })}</div></div></section><CTA/></>; }

@@ -1,0 +1,6 @@
+import { PageHero, CTA, SectionHeading } from '@/components/ui';
+import { FilterGrid } from '@/components/filter-grid';
+import { framework } from '@/data/site';
+import { pageMetadata } from '@/lib/seo';
+export const metadata = pageMetadata('Case Studies & Growth Plans', 'Explore illustrative digital growth strategies for a restaurant, beauty salon and coaching institute in India.', '/case-studies');
+export default function CasesPage() { return <><PageHero eyebrow="Strategy in context" title={<>Local businesses.<br/><span className="gradient-text">Bigger possibilities.</span></>} description="A good plan starts with the business behind it. Explore how we would approach discovery, trust and growth across three local industries."/><section className="section"><div className="container"><FilterGrid kind="cases"/></div></section><section className="section why-section"><div className="container"><SectionHeading eyebrow="One framework. Your own path." title="The foundations of a stronger brand."/><div className="framework-grid">{framework.map((step,i) => <article key={step.title}><span>0{i+1}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div></div></section><CTA/></>; }

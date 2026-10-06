@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { contactSchema, isSameOrigin } from '../src/lib/contact';
+import { RateLimiter } from '../src/lib/rate-limit';
+import { serializeJsonLd } from '../src/lib/seo';
+const valid = { name: 'Test Owner', email: 'owner@example.com', business: 'Local Shop', interest: 'Free brand audit', message: 'I would like to improve my local search presence.', consent: true, website: '' };
+test('valid enquiry is accepted and text is trimmed', () => { const result = contactSchema.parse({ ...valid, name: '  Test Owner  ' }); assert.equal(result.name, 'Test Owner'); });
+test('rejects missing consent, invalid email, unknown plan, honeypot and excessive message', () => { for (const change of [{ consent: false }, { email: 'bad' }, { interest: 'unlisted-plan' }, { website: 'spam' }, { message: 'x'.repeat(3001) }, { message: 'short' }]) assert.equal(contactSchema.safeParse({ ...valid, ...change }).success, false); });
+test('only accepts same-origin requests', () => { assert.equal(isSameOrigin('https://mybrandsbuddy.com', 'https://mybrandsbuddy.com/api/contact'), true); for (const origin of [null, 'https://evil.example', 'null', 'invalid']) assert.equal(isSameOrigin(origin, 'https://mybrandsbuddy.com/api/contact'), false); });
+test('rate limiter isolates keys, rejects over limit and expires', () => { const limiter = new RateLimiter(2, 100); assert.equal(limiter.allow('a',0), true); assert.equal(limiter.allow('a',1), true); assert.equal(limiter.allow('a',2), false); assert.equal(limiter.allow('b',2), true); assert.equal(limiter.allow('a',100), true); });
+test('JSON-LD cannot terminate a script element and stays valid JSON', () => { const input = { text: '</script><script>alert(1)</script>' }; const result = serializeJsonLd(input); assert.equal(result.includes('<'), false); assert.deepEqual(JSON.parse(result), input); });
