@@ -1,0 +1,118 @@
+MyBrandsBuddy/
+├── .reference-review/
+│   ├── MyBrandsBuddy BrandGrowthStrategies.png
+│   ├── MyBrandsBuddy Roadmap.png
+│   └── MyBrandsBuddy StarterKit.png
+├── docs/
+│   ├── content-provenance.md
+│   ├── file-tree.txt
+│   ├── generated-assets.md
+│   ├── security.md
+│   ├── ui-modernization.md
+│   └── verification.md
+├── public/
+│   └── images/
+│       ├── production-studio.webp
+│       └── residence-concept.webp
+├── scripts/
+│   └── extract-copy.mjs
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   │       └── route.ts
+│   │   ├── blog/
+│   │   │   ├── [slug]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── case-studies/
+│   │   │   ├── [slug]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── get-started/
+│   │   │   └── page.tsx
+│   │   ├── pricing/
+│   │   │   └── page.tsx
+│   │   ├── privacy/
+│   │   │   └── page.tsx
+│   │   ├── services/
+│   │   │   ├── [slug]/
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── work/
+│   │   │   └── page.tsx
+│   │   ├── error.tsx
+│   │   ├── framework.css
+│   │   ├── globals.css
+│   │   ├── icon.svg
+│   │   ├── layout.tsx
+│   │   ├── modern.css
+│   │   ├── not-found.tsx
+│   │   ├── opengraph-image.tsx
+│   │   ├── page.tsx
+│   │   ├── premium.css
+│   │   ├── robots.ts
+│   │   ├── sitemap.ts
+│   │   └── template.tsx
+│   ├── components/
+│   │   ├── react-bits/
+│   │   │   ├── LICENSE.md
+│   │   │   ├── blur-text.tsx
+│   │   │   └── spotlight-card.tsx
+│   │   ├── agency-cta.tsx
+│   │   ├── agency-interactions.tsx
+│   │   ├── cards.tsx
+│   │   ├── contact-form.tsx
+│   │   ├── filter-grid.tsx
+│   │   ├── footer.tsx
+│   │   ├── header.tsx
+│   │   ├── icon.tsx
+│   │   ├── page-tools.tsx
+│   │   ├── portfolio.tsx
+│   │   ├── process-timeline.tsx
+│   │   ├── reveal.tsx
+│   │   ├── rocket-art.tsx
+│   │   ├── service-directory.tsx
+│   │   ├── service-visual.tsx
+│   │   └── ui.tsx
+│   ├── data/
+│   │   ├── about.ts
+│   │   ├── agency.ts
+│   │   ├── blog.ts
+│   │   ├── case-studies.ts
+│   │   ├── copy.ts
+│   │   ├── interface.ts
+│   │   ├── legacy-services.ts
+│   │   ├── pricing.ts
+│   │   ├── services.ts
+│   │   └── site.ts
+│   └── lib/
+│       ├── contact.ts
+│       ├── rate-limit.ts
+│       └── seo.ts
+├── tests/
+│   ├── e2e/
+│   │   ├── modern.spec.ts
+│   │   ├── site.spec.ts
+│   │   └── upgrade.spec.ts
+│   ├── api.test.ts
+│   └── contact.test.ts
+├── .env.example
+├── .gitignore
+├── .prettierignore
+├── .prettierrc.json
+├── README.md
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package.json
+├── playwright.config.ts
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── postcss.config.mjs
+├── tsconfig.json
+└── tsconfig.tsbuildinfo
