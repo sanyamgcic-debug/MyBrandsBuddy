@@ -1,0 +1,211 @@
+.exact-service .service-hero-grid {
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+.exact-service .service-hero-copy h1 {
+  font-size: clamp(32px, 3.8vw, 58px);
+  line-height: 1.13;
+  letter-spacing: -0.045em;
+  max-width: 20ch;
+  overflow-wrap: break-word;
+}
+.exact-service .source-subheadline {
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+.exact-service .service-hero {
+  padding-bottom: 72px;
+}
+.exact-service .breadcrumb {
+  flex-wrap: wrap;
+  white-space: normal;
+}
+.source-reading {
+  max-width: 930px;
+}
+.source-intro {
+  background: var(--cream, #efebf5);
+  color: #19132c;
+}
+.source-intro p {
+  color: inherit;
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.85;
+}
+.source-intro p + p {
+  margin-top: 24px;
+}
+.source-section {
+  border-bottom: 1px solid rgba(200, 180, 239, 0.12);
+}
+.source-section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  gap: clamp(32px, 6vw, 100px);
+}
+.source-section h2 {
+  font-size: clamp(27px, 3vw, 42px);
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+}
+.source-blocks {
+  min-width: 0;
+}
+.source-blocks p {
+  white-space: pre-line;
+  line-height: 1.85;
+}
+.source-blocks p + p,
+.source-blocks h3 + p {
+  margin-top: 20px;
+}
+.source-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  list-style-position: inside;
+}
+.source-list li {
+  padding: 22px 24px;
+  background: rgba(172, 130, 229, 0.055);
+  border: 1px solid rgba(191, 165, 228, 0.18);
+  border-radius: 18px;
+  color: #d7d1e2;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.source-list li strong {
+  color: #f3edf9;
+  font-weight: 600;
+}
+.source-ul {
+  list-style-type: disc;
+}
+.source-ol {
+  list-style-type: decimal;
+  counter-reset: none;
+}
+.source-ol li::marker {
+  color: #cfa9ff;
+  font-weight: 700;
+}
+.source-faq .faq-list details {
+  padding: 24px 0;
+}
+.source-faq .faq-list summary {
+  gap: 20px;
+  line-height: 1.6;
+}
+.source-faq .faq-list p {
+  white-space: pre-line;
+  line-height: 1.85;
+}
+.source-cta {
+  background: radial-gradient(ellipse at 80% 100%, #392055 0, transparent 65%);
+}
+.source-cta-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  font-size: clamp(22px, 2.5vw, 34px);
+  line-height: 1.5;
+}
+.source-cta-content > span:first-child {
+  flex-basis: 100%;
+  max-width: 800px;
+}
+.source-cta .button {
+  white-space: normal;
+  height: auto;
+  min-height: 50px;
+  text-align: center;
+}
+.source-contact-note {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.exact-service.theme-branding .source-ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.exact-service.theme-social .source-ul li {
+  border-left: 3px solid #ba8ee9;
+}
+.exact-service.theme-consulting .source-ol li {
+  border-radius: 4px 24px 24px 4px;
+  border-left: 3px solid #ba8ee9;
+}
+.exact-service.theme-funding .source-list li {
+  border-radius: 6px;
+}
+.exact-service.theme-design .source-ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.exact-service.theme-content .source-list li {
+  background: transparent;
+  border-width: 0 0 1px;
+  border-radius: 0;
+}
+.exact-service.theme-performance .source-ol li {
+  background: linear-gradient(100deg, rgba(160, 113, 229, 0.12), transparent);
+}
+@media (max-width: 900px) {
+  .exact-service .service-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .exact-service .service-hero-copy h1 {
+    max-width: 24ch;
+    font-size: clamp(32px, 6vw, 54px);
+  }
+  .exact-service .service-visual {
+    max-width: 700px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .source-section-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .source-list li {
+    padding: 19px;
+  }
+  .exact-service.theme-branding .source-ul,
+  .exact-service.theme-design .source-ul {
+    grid-template-columns: 1fr;
+  }
+  .source-cta-content {
+    align-items: stretch;
+  }
+  .source-cta .button {
+    width: 100%;
+  }
+  .exact-service .service-hero {
+    padding-bottom: 40px;
+  }
+  .source-faq .faq-list summary {
+    font-size: 17px;
+  }
+}
+.exact-service .source-intro em {
+  color: inherit;
+}
+.exact-service .faq-list summary > [data-copy-unit],
+.exact-service .faq-list details[open] summary > [data-copy-unit] {
+  color: #f2eaf9;
+  transform: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+.exact-service .faq-list summary > [aria-hidden='true'] {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
+}

@@ -1,7 +1,84 @@
-import { Rocket, Heart, Eye, Sprout, MapPin } from 'lucide-react';
-import { PageHero, SectionHeading, CTA, ButtonLink } from '@/components/ui';
+import { editorialCopy } from '@/data/interface';
+import Image from 'next/image';
+import { PageHero, ButtonLink } from '@/components/ui';
+import { ProcessTimeline } from '@/components/process-timeline';
+import { AgencyCTA } from '@/components/agency-cta';
+import { agency } from '@/data/agency';
 import { about } from '@/data/about';
 import { pageMetadata } from '@/lib/seo';
-export const metadata = pageMetadata('About Your Growth Buddy', about.intro, '/about');
-const icons = [Eye, Sprout, Heart, MapPin];
-export default function AboutPage() { return <><PageHero eyebrow="Meet MyBrandsBuddy" title={<>Your brand.<br/><span className="gradient-text">Our mission.</span></>} description={about.intro}/><section className="section"><div className="container about-story"><div><SectionHeading eyebrow="Small business. Big heart." title="Good businesses deserve a bigger stage."/>{about.story.map(p => <p key={p}>{p}</p>)}<div style={{ marginTop: 26 }}><ButtonLink>Meet your growth buddy</ButtonLink></div></div><div className="about-poster dark"><Rocket aria-hidden="true" strokeWidth={1}/><strong>Small<br/>businesses.<br/><span className="gradient-text">Bigger<br/>tomorrows.</span></strong><small>Your growth story starts with you.</small></div></div></section><section className="section why-section"><div className="container"><SectionHeading eyebrow="What we bring to the table" title="Good work starts with good values."/><div className="values-grid">{about.values.map((value,i) => { const Glyph = icons[i]; return <article key={value.title}><Glyph aria-hidden="true"/><h3>{value.title}</h3><p>{value.description}</p></article>; })}</div></div></section><CTA/></>; }
+export const metadata = pageMetadata(
+  'A Growth Partner Who Sees the Whole Picture',
+  'Meet MyBrandsBuddy: a focused partner connecting strategy, creativity and technology for businesses across India.',
+  '/about',
+);
+export default function About() {
+  return (
+    <>
+      <PageHero
+        eyebrow="A little about your buddy"
+        title={
+          <>
+            Business thinking.
+            <br />
+            Creative instinct.
+            <br />
+            <em>Connected execution.</em>
+          </>
+        }
+        description={about.intro}
+      />
+      <section className="section">
+        <div className="container about-editorial">
+          <div className="about-manifesto">
+            <span className="eyebrow">What we believe</span>
+            <h2>
+              Good businesses deserve
+              <br />
+              <em>a bigger stage.</em>
+            </h2>
+            {about.story.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+            <ButtonLink href="/get-started">Let’s meet your business</ButtonLink>
+          </div>
+          <div className="about-image">
+            <Image
+              src="/images/production-studio.webp"
+              alt="Editorial concept of a camera in a creative studio"
+              fill
+              sizes="(max-width: 700px) 100vw, 45vw"
+            />
+            <span>THINK CLEARLY. MAKE CAREFULLY.</span>
+            <small>Editorial concept imagery</small>
+          </div>
+        </div>
+      </section>
+      <section className="section why-editorial">
+        <div className="container why-layout">
+          <div>
+            <span className="eyebrow">What working together looks like</span>
+            <h2>
+              One shared brief.
+              <br />
+              <em>A more connected team.</em>
+            </h2>
+            <p>{editorialCopy.about.approach}</p>
+          </div>
+          <div className="principle-list">
+            {agency.principles.map((p, i) => (
+              <article key={p.title}>
+                <span>0{i + 1}</span>
+                <div>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <ProcessTimeline />
+      <AgencyCTA />
+    </>
+  );
+}

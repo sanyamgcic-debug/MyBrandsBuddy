@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+@source '../';
+@plugin 'daisyui' {
+  themes: false;
+  prefix: 'du-';
+  include: button, input, select, textarea, checkbox, badge, loading, alert;
+  logs: false;
+}
+@plugin 'daisyui/theme' {
+  name: 'mybrandsbuddy';
+  default: true;
+  color-scheme: dark;
+  --color-base-100: #0d0b1c;
+  --color-base-200: #171426;
+  --color-base-300: #282036;
+  --color-base-content: #f3f0fb;
+  --color-primary: #b890f2;
+  --color-primary-content: #170c29;
+  --color-secondary: #662d91;
+  --color-secondary-content: #ffffff;
+  --color-accent: #cfa9ff;
+  --color-accent-content: #170c29;
+  --color-neutral: #211a30;
+  --color-neutral-content: #ede5f7;
+  --color-info: #a9c7ff;
+  --color-info-content: #101e35;
+  --color-success: #a4e7ca;
+  --color-success-content: #10251d;
+  --color-warning: #f0d39e;
+  --color-warning-content: #2d2110;
+  --color-error: #ffb3ce;
+  --color-error-content: #361322;
+  --radius-selector: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+@theme {
+  --color-rocket: #8b5cf6;
+  --font-display: 'Montserrat Variable', Arial, sans-serif;
+}

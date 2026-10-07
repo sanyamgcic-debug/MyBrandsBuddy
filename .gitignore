@@ -8,3 +8,5 @@ test-results/
 *.tsbuildinfo
 .next-server.log
 .reference-review/
+
+.local-preview/

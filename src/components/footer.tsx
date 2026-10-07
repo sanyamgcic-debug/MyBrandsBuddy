@@ -1,5 +1,71 @@
 import Link from 'next/link';
 import { Rocket, ArrowUpRight } from 'lucide-react';
-import { navigation, site } from '@/data/site';
-import { services } from '@/data/services';
-export function Footer() { return <footer className="site-footer dark"><div className="container"><div className="footer-grid"><div><Link href="/" className="brand"><span className="brand-icon"><Rocket size={24} aria-hidden="true" /></span><span>MyBrands<span className="brand-accent">Buddy</span>.</span></Link><p>Your brand deserves a buddy<br />who actually gets it.</p><a className="footer-email" href={`mailto:${site.email}`}>{site.email}<ArrowUpRight size={16} aria-hidden="true" /></a><span className="footer-location">{site.location}</span></div><div><h2>Explore</h2>{navigation.filter(n => n.href !== '/').map(n => <Link href={n.href} key={n.href}>{n.label}</Link>)}</div><div><h2>How we help</h2>{services.slice(0, 6).map(s => <Link key={s.slug} href={`/services/${s.slug}`}>{s.shortTitle}</Link>)}</div><div className="footer-note"><span className="eyebrow"><span />Built for your next big thing</span><h2>Small business.<br /><span className="gradient-text">Big possibility.</span></h2><Link href="/contact">Let’s grow together <ArrowUpRight size={18} aria-hidden="true" /></Link></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><Link href="/privacy">Privacy policy</Link><span>Made for businesses with heart.</span></div></div></footer>; }
+import { site } from '@/data/site';
+import { serviceGroups, services } from '@/data/services';
+export function Footer() {
+  return (
+    <footer className="site-footer dark">
+      <div className="container">
+        <div className="footer-topline">
+          <Link href="/" className="brand" aria-label="MyBrandsBuddy home">
+            <span className="brand-icon">
+              <Rocket size={24} aria-hidden="true" />
+            </span>
+            <span>
+              My<span className="brand-accent">Brands</span>Buddy.
+            </span>
+          </Link>
+          <span>Independent thinking. Connected execution.</span>
+        </div>
+        <div className="footer-main">
+          <div className="footer-contact">
+            <h2>
+              Your next chapter
+              <br />
+              starts with <em>hello.</em>
+            </h2>
+            <a href={`mailto:${site.email}`}>
+              {site.email}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+            <p>{site.location}</p>
+            <div className="footer-quick">
+              {[
+                { name: 'Work', href: '/work' },
+                { name: 'About', href: '/about' },
+                { name: 'Insights', href: '/blog' },
+                { name: 'Pricing', href: '/pricing' },
+                { name: 'Contact', href: '/contact' },
+              ].map((x) => (
+                <Link key={x.href} href={x.href}>
+                  {x.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="footer-service-groups">
+            {serviceGroups.map((group) => (
+              <div key={group}>
+                <h2>{group}</h2>
+                {services
+                  .filter((s) => s.category === group)
+                  .map((s) => (
+                    <Link key={s.slug} href={`/services/${s.slug}`}>
+                      {s.shortTitle}
+                    </Link>
+                  ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} {site.name}
+          </span>
+          <Link href="/privacy">Privacy policy</Link>
+          <Link href="/get-started">Let’s build something worthwhile ↗</Link>
+        </div>
+      </div>
+    </footer>
+  );
+}

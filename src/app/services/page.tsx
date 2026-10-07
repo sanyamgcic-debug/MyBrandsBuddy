@@ -1,6 +1,33 @@
-import { PageHero, Process, CTA } from '@/components/ui';
-import { ServiceCard } from '@/components/cards';
-import { services } from '@/data/services';
+import { editorialCopy } from '@/data/interface';
+import { PageHero } from '@/components/ui';
+import { ServiceDirectory } from '@/components/service-directory';
+import { AgencyCTA } from '@/components/agency-cta';
 import { pageMetadata } from '@/lib/seo';
-export const metadata = pageMetadata('Digital Growth Services', 'Explore SEO, social media, paid ads, branding, web design, content, ASO and WhatsApp marketing for small businesses.', '/services');
-export default function ServicesPage() { return <><PageHero eyebrow="Our services" title={<>Everything you need.<br/><span className="gradient-text">One growth buddy.</span></>} description="From strategy to execution, we connect the right digital services around your business, your customers and your next goal."/><section className="section"><div className="container services-grid">{services.map((service,i) => <ServiceCard key={service.slug} service={service} index={i}/>)}</div></section><Process/><CTA/></>; }
+export const metadata = pageMetadata(
+  'Our Services — 13 Connected Disciplines',
+  'Explore strategy, SEO, social media, branding, consulting, loan guidance, websites, design, photography, video, content and performance marketing.',
+  '/services',
+);
+export default function Services() {
+  return (
+    <>
+      <PageHero
+        eyebrow="The MyBrandsBuddy ecosystem"
+        title={
+          <>
+            Find the right move.
+            <br />
+            <em>Connect what comes next.</em>
+          </>
+        }
+        description={editorialCopy.services.intro}
+      />
+      <section className="section">
+        <div className="container">
+          <ServiceDirectory overview />
+        </div>
+      </section>
+      <AgencyCTA />
+    </>
+  );
+}
