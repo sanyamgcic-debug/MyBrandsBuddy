@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   --ink: #15152c;
   --muted: #646476;
@@ -212,7 +214,7 @@ p {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1000;
   background: #0b0b21f5;
   color: #fff;
   border-bottom: 1px solid #ffffff0c;

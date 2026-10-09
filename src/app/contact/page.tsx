@@ -15,10 +15,13 @@ export const metadata = pageMetadata(
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ plan?: string; service?: string }>;
+  searchParams: Promise<{ plan?: string; service?: string; intent?: string }>;
 }) {
   const params = await searchParams;
-  const selected = params.plan || params.service || '';
+  let selected = params.plan || params.service || '';
+  if (!selected && params.intent === 'consultation') {
+    selected = 'Business & Marketing Consulting';
+  }
   const allowed = [...plans.map((p) => p.name), ...services.map((s) => s.title)];
   const initialInterest = allowed.includes(selected) ? selected : 'Free brand audit';
   return (

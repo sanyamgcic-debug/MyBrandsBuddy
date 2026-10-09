@@ -1,0 +1,124 @@
+/* Graphic Design Video Hero & Service Page Styles */
+
+:root {
+  --gd-purple-deep: #662d91;
+  --gd-purple-bright: #8b5cf6;
+  --gd-purple-glow: rgba(139, 92, 246, 0.35);
+  --gd-charcoal: #141418;
+  --gd-dark-bg: #09090b;
+  --gd-border: rgba(255, 255, 255, 0.1);
+}
+
+.graphic-design-page {
+  background-color: var(--gd-dark-bg);
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Subtle graphic design grid & dot pattern */
+.gd-grid-pattern {
+  background-image: 
+    radial-gradient(rgba(139, 92, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px, 64px 64px;
+}
+
+/* Video Showcase Container Framing */
+.gd-video-frame {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background-color: var(--gd-charcoal);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 
+    0 24px 64px -16px rgba(102, 45, 145, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gd-video-frame:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 
+    0 32px 80px -16px rgba(102, 45, 145, 0.6),
+    0 0 0 1px rgba(139, 92, 246, 0.3);
+}
+
+/* Ambient Back Glow */
+.gd-ambient-glow {
+  position: absolute;
+  inset: -16px;
+  background: radial-gradient(circle at 60% 40%, rgba(102, 45, 145, 0.35) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 75%);
+  filter: blur(36px);
+  border-radius: 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Primary CTA Button with Brand Gradient */
+.gd-btn-primary {
+  background: linear-gradient(135deg, #662d91 0%, #8b5cf6 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(102, 45, 145, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gd-btn-primary:hover {
+  background: linear-gradient(135deg, #7835ab 0%, #9d71f7 100%);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Secondary CTA Button with Subtle Purple Rim */
+.gd-btn-secondary {
+  background: rgba(26, 26, 26, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gd-btn-secondary:hover {
+  background: rgba(40, 30, 56, 0.9);
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+/* Understated Play/Pause HUD Control */
+.gd-playback-control {
+  background: rgba(14, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.gd-playback-control:hover {
+  background: rgba(102, 45, 145, 0.8);
+  border-color: #8b5cf6;
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+/* Section Transitions */
+.gd-body-section {
+  background-color: #0d0d11;
+  border-top: 1px solid rgba(139, 92, 246, 0.12);
+}
+
+.gd-card {
+  background: #141419;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gd-card:hover {
+  background: #191822;
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}

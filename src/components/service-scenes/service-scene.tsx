@@ -1,586 +1,155 @@
-import Image from 'next/image';
-import { SceneFrame } from './scene-frame';
-import './service-scenes.css';
+'use client';
 
-const concepts: Record<string, { name: string; stages: string[] }> = {
-  social: { name: 'social publishing studio', stages: ['Idea', 'Content', 'Publish', 'Community'] },
-  branding: { name: 'brand identity studio', stages: ['Sketch', 'Identity', 'System', 'Brand'] },
-  consulting: {
-    name: 'business strategy roadmap',
-    stages: ['Analyse', 'Plan', 'Execute', 'Review'],
+import Image from 'next/image';
+import { ServiceMotionGraphic } from './service-motion-graphics';
+import './service-scenes.css';
+import './motion-graphics.css';
+
+export const SERVICE_HERO_CONFIG: Record<
+  string,
+  {
+    src: string;
+    alt: string;
+    hudTitle: string;
+    hudAccent: string;
+  }
+> = {
+  'seo-local-search': {
+    src: '/images/hero-seo-local-search.webp',
+    alt: 'A glowing location pin standing out among many dim pins on a city map, with a magnifying glass beside it.',
+    hudTitle: 'SEO & LOCAL SEARCH // LIVE DISCOVERY',
+    hudAccent: '#7c3aed',
   },
-  funding: {
-    name: 'business documentation desk',
-    stages: ['Requirements', 'Documents', 'Application', 'Guidance'],
+  'social-media-marketing': {
+    src: '/images/hero-social-media.webp',
+    alt: 'Floating phone screens with abstract social media posts, reactions and a content calendar linked by glowing light trails.',
+    hudTitle: 'SOCIAL MEDIA MARKETING // VIRAL RHYTHM',
+    hudAccent: '#a855f7',
   },
-  web: {
-    name: 'responsive digital product studio',
-    stages: ['Design', 'Desktop', 'Tablet', 'Mobile'],
+  'branding-brand-strategy': {
+    src: '/images/hero-branding.webp',
+    alt: 'A brand board showing a sketched logo mark becoming a finished one, beside colour swatches and a positioning compass.',
+    hudTitle: 'BRAND IDENTITY & STRATEGY // SYSTEM SPECIMEN',
+    hudAccent: '#8b5cf6',
   },
-  design: { name: 'graphic design workbench', stages: ['Sketch', 'Type', 'Colour', 'Compose'] },
-  video: { name: 'video editing suite', stages: ['Footage', 'Edit', 'Grade', 'Export'] },
-  photography: {
-    name: 'commercial photography set',
-    stages: ['Frame', 'Light', 'Focus', 'Capture'],
+  'business-marketing-consulting': {
+    src: '/images/hero-consulting.webp',
+    alt: 'A glowing roadmap across a dark board, with several paths converging on one bright destination.',
+    hudTitle: 'BUSINESS CONSULTING // STRATEGIC ROADMAP',
+    hudAccent: '#c4a5ff',
   },
-  mobile: { name: 'mobile creator studio', stages: ['Capture', 'Reel', 'Story', 'Post'] },
-  content: { name: 'editorial content workshop', stages: ['Idea', 'Script', 'Content', 'Publish'] },
-  performance: {
-    name: 'campaign control room',
-    stages: ['Awareness', 'Interest', 'Consider', 'Convert'],
+  'business-loan-assistance': {
+    src: '/images/hero-loan-guidance.webp',
+    alt: 'An organised document folder and calculator beside a small shopfront climbing a short staircase.',
+    hudTitle: 'BUSINESS LOAN GUIDANCE // STAGED GROWTH',
+    hudAccent: '#a78bfa',
   },
-  estate: {
-    name: 'property campaign studio',
-    stages: ['Property', 'Content', 'Campaign', 'Enquiry'],
+  'website-development': {
+    src: '/images/hero-website-development.webp',
+    alt: 'A laptop and phone shown in layers, from wireframe to finished page, with a cursor about to click a button.',
+    hudTitle: 'WEBSITE DEVELOPMENT // LAYERED ARCHITECTURE',
+    hudAccent: '#8b5cf6',
   },
-  search: { name: 'organic search architecture', stages: ['Search', 'Crawl', 'Index', 'Discover'] },
-  aso: { name: 'app discovery studio', stages: ['Listing', 'Screens', 'Discover', 'Review'] },
-  whatsapp: {
-    name: 'customer messaging workflow',
-    stages: ['Opt in', 'Message', 'Reply', 'Follow up'],
+  'graphic-design': {
+    src: '/images/hero-graphic-design.webp',
+    alt: 'A branded stationery set with a monogram business card, colour swatches and a glowing pen-tool curve.',
+    hudTitle: 'GRAPHIC DESIGN // BRAND IDENTITY SUITE',
+    hudAccent: '#7c3aed',
+  },
+  'video-production': {
+    src: '/images/hero-video-editing-production.webp',
+    alt: 'A glowing video editing timeline with clips, a playhead and a colour-grading wheel.',
+    hudTitle: 'VIDEO PRODUCTION & EDITING // 3D TIMELINE',
+    hudAccent: '#9333ea',
+  },
+  'photography-videography': {
+    src: '/images/hero-photography-videography.webp',
+    alt: 'A cinema camera and studio lighting set up around a product on a pedestal.',
+    hudTitle: 'COMMERCIAL PHOTOGRAPHY // STUDIO LIGHTING',
+    hudAccent: '#c084fc',
+  },
+  'iphone-camera-shoots': {
+    src: '/images/hero-iphone-camera-shoots.webp',
+    alt: 'A phone on a gimbal beside a small camera and ring light, with a vertical video frame floating above.',
+    hudTitle: 'IPHONE & CAMERA SHOOTS // 9:16 REEL SYSTEM',
+    hudAccent: '#a855f7',
+  },
+  'content-creation': {
+    src: '/images/hero-content-creation.webp',
+    alt: 'A glowing lightbulb surrounded by floating scripts, captions, storyboard frames and carousel slides.',
+    hudTitle: 'CONTENT CREATION // MULTI-FORMAT EDITORIAL',
+    hudAccent: '#8b5cf6',
+  },
+  'performance-marketing': {
+    src: '/images/hero-performance-marketing.webp',
+    alt: 'A glass funnel turning many glowing particles into one bright orb, beside rising bars and a target.',
+    hudTitle: 'PERFORMANCE MARKETING // CONVERSION ENGINE',
+    hudAccent: '#7c3aed',
+  },
+  'real-estate-marketing': {
+    src: '/images/hero-real-estate.webp',
+    alt: 'A lit contemporary courtyard home at dusk with a location pin and a small drone above it.',
+    hudTitle: 'REAL ESTATE MARKETING // DUSK RESIDENCE',
+    hudAccent: '#ff1a3c',
   },
 };
-function Picture({
-  src,
-  priority = false,
-  className = '',
-}: {
-  src: string;
-  priority?: boolean;
-  className?: string;
-}) {
-  return (
-    <Image
-      className={className}
-      src={`/images/${src}.webp`}
-      alt=""
-      fill
-      sizes="(max-width: 600px) 80vw, (max-width: 1000px) 60vw, 480px"
-      priority={priority}
-    />
-  );
-}
-function Lines({ count = 4 }: { count?: number }) {
-  return (
-    <div className="ink-lines">
-      {Array.from({ length: count }, (_, i) => (
-        <i key={i} />
-      ))}
-    </div>
-  );
-}
-function Grid() {
-  return (
-    <svg className="draft-grid" viewBox="0 0 500 420">
-      <defs>
-        <pattern id="scene-grid" width="25" height="25" patternUnits="userSpaceOnUse">
-          <path d="M25 0H0V25" fill="none" stroke="currentColor" strokeWidth=".5" />
-        </pattern>
-      </defs>
-      <rect width="500" height="420" fill="url(#scene-grid)" />
-    </svg>
-  );
-}
-function Screen({ small = false }: { small?: boolean }) {
-  return (
-    <div className={`product-screen ${small ? 'small-screen' : ''}`}>
-      <div className="screen-chrome">
-        <i />
-        <i />
-        <i />
-      </div>
-      <div className="screen-nav">
-        <b>M/B.</b>
-        <i />
-        <i />
-      </div>
-      <div className="screen-layout">
-        <div>
-          <b>Aa</b>
-          <Lines count={3} />
-          <span className="screen-cta" />
-        </div>
-        <div className="screen-artwork">
-          <svg viewBox="0 0 100 100">
-            <path
-              d="M10 80L50 10L90 80Z M25 80L50 35L75 80Z"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="6"
-            />
-          </svg>
-        </div>
-      </div>
-      <div className="screen-tiles">
-        <i />
-        <i />
-        <i />
-      </div>
-    </div>
-  );
-}
+
 export function ServiceScene({ theme, slug }: { theme: string; slug?: string }) {
-  const key =
-    slug === 'app-store-optimization' ? 'aso' : slug === 'whatsapp-marketing' ? 'whatsapp' : theme;
-  const config = concepts[key] || concepts.content;
-  return (
-    <SceneFrame theme={key} {...config}>
-      <div className="scene-floor" />
-      <div className="scene-light" />
-      {key === 'social' && (
-        <>
-          <div className="social-planner depth-back">
-            <small>CONTENT CALENDAR</small>
-            <div className="planner-grid">
-              {Array.from({ length: 15 }, (_, i) => (
-                <i key={i} className={i === 7 ? 'scheduled' : ''}>
-                  {i + 1}
-                </i>
-              ))}
-            </div>
-            <span className="pencil" />
-          </div>
-          <div className="social-handset depth-front">
-            <div className="device-speaker" />
-            <div className="social-profile">
-              <i />
-              MyBrandsBuddy <span>•••</span>
-            </div>
-            <div className="social-cover">
-              <Picture src="mobile-content-shoot" priority />
-              <span className="reel-play">▷</span>
-            </div>
-            <div className="social-actions">♡　↗　☷</div>
-            <Lines count={2} />
-            <div className="publish-state">
-              <span>DRAFT</span>
-              <span>READY</span>
-              <span>PUBLISHED</span>
-              <span>COMMUNITY</span>
-            </div>
-          </div>
-          <div className="reply-slip depth-near">
-            <span className="message-bubble">•••</span>
-            <div>
-              <small>CONVERSATION</small>
-              <Lines count={2} />
-            </div>
-          </div>
-          <div className="scene-connector" />
-        </>
-      )}
-      {key === 'branding' && (
-        <>
-          <div className="identity-grid depth-back">
-            <Grid />
-            <svg className="identity-mark" viewBox="0 0 120 120">
-              <path
-                d="M15 95V25L60 65L105 25V95 M15 25H105 M60 15V105"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
-          <div className="brand-book depth-mid">
-            <div className="book-spine" />
-            <small>MYBRANDSBUDDY</small>
-            <b>
-              Aa<span>↗</span>
-            </b>
-            <div className="book-rule" />
-            <span>
-              IDENTITY
-              <br />
-              GUIDELINES
-            </span>
-          </div>
-          <div className="brand-swatch depth-front">
-            <i />
-            <i />
-            <i />
-            <i />
-            <small>COLOUR SYSTEM</small>
-          </div>
-          <div className="brand-card depth-near">
-            <b>M/B.</b>
-            <span>MyBrandsBuddy</span>
-          </div>
-        </>
-      )}
-      {key === 'consulting' && (
-        <>
-          <div className="roadmap-board depth-mid">
-            <small>STRATEGY / ROADMAP</small>
-            <svg viewBox="0 0 500 360">
-              <path className="route-base" d="M50 290H150V200H285V95H440" />
-              <path className="route-progress" d="M50 290H150V200H285V95H440" pathLength="1" />
-              {[
-                [50, 290],
-                [150, 200],
-                [285, 95],
-                [440, 95],
-              ].map(([x, y], i) => (
-                <g key={i} className={`milestone milestone-${i}`}>
-                  <circle cx={x} cy={y} r="18" />
-                  <text x={x} y={y + 5} textAnchor="middle">
-                    {i + 1}
-                  </text>
-                </g>
-              ))}
-            </svg>
-            <div className="roadmap-axis">
-              <span>AUDIENCE</span>
-              <span>OFFER</span>
-              <span>CHANNELS</span>
-            </div>
-          </div>
-          <div className="strategy-note depth-front">
-            <small>PRIORITIES</small>
-            <Lines count={3} />
-            <div className="decision-check">↗</div>
-          </div>
-        </>
-      )}
-      {key === 'funding' && (
-        <>
-          <div className="document-folder depth-back">
-            <span>BUSINESS DOCUMENTS</span>
-          </div>
-          <div className="application-sheet depth-mid">
-            <small>APPLICATION / PREPARATION</small>
-            <div className="paper-rule" />
-            <b>Business profile</b>
-            <Lines count={5} />
-            <div className="signature-line" />
-          </div>
-          <div className="document-checklist depth-front">
-            <small>REQUIREMENTS</small>
-            {['Business details', 'Documentation', 'Application', 'Guidance'].map((x, i) => (
-              <div className={`check-row check-${i}`} key={x}>
-                <i>✓</i>
-                <span>{x}</span>
-              </div>
-            ))}
-          </div>
-          <div className="binder-clip" />
-        </>
-      )}
-      {key === 'web' && (
-        <>
-          <div className="desktop-device depth-mid">
-            <Screen />
-            <div className="monitor-foot" />
-          </div>
-          <div className="tablet-device depth-back">
-            <Screen small />
-          </div>
-          <div className="web-phone depth-front">
-            <div className="device-speaker" />
-            <Screen small />
-          </div>
-          <div className="code-strip depth-near">
-            <span>&lt; / &gt;</span>
-            <i />
-            <i />
-            <i />
-          </div>
-        </>
-      )}
-      {key === 'design' && (
-        <>
-          <div className="cutting-mat depth-back">
-            <Grid />
-          </div>
-          <div className="studio-poster depth-mid">
-            <small>MYBRANDSBUDDY / STUDIO</small>
-            <div className="poster-type">
-              Aa<span>↗</span>
-            </div>
-            <div className="poster-gridlines" />
-            <span className="poster-index">TYPE / FORM / COLOUR</span>
-          </div>
-          <div className="ink-swatch depth-front">
-            <i />
-            <i />
-            <i />
-            <i />
-          </div>
-          <div className="packaging-box depth-near">
-            <span>M/B.</span>
-            <div />
-          </div>
-          <div className="studio-ruler" />
-        </>
-      )}
-      {key === 'video' && (
-        <>
-          <div className="edit-monitor depth-mid">
-            <div className="edit-chrome">
-              M/B. <span>EDIT / COLOUR / SOUND</span>
-            </div>
-            <div className="edit-preview">
-              <Picture src="production-studio" priority />
-              <div className="grade-wipe" />
-              <i className="frame-guide" />
-            </div>
-            <div className="edit-timeline">
-              <div className="timeline-ruler" />
-              {[0, 1, 2].map((i) => (
-                <div className={`timeline-track track-${i}`} key={i}>
-                  <i />
-                  <i />
-                  <i />
-                </div>
-              ))}
-              <div className="timeline-playhead" />
-            </div>
-          </div>
-          <div className="clapper depth-front">
-            <div />
-            <b>SCENE / TAKE</b>
-            <Lines count={2} />
-          </div>
-          <div className="lens-object depth-near">
-            <i />
-            <span />
-          </div>
-        </>
-      )}
-      {key === 'photography' && (
-        <>
-          <div className="production-backdrop depth-back">
-            <Picture src="photography-studio" priority />
-            <div className="light-sweep" />
-            <div className="focus-brackets">
-              <i />
-              <i />
-              <i />
-              <i />
-            </div>
-          </div>
-          <div className="softbox depth-mid">
-            <i />
-            <span />
-          </div>
-          <div className="contact-print depth-front">
-            <div>
-              <Picture src="photography-studio" />
-            </div>
-            <small>FRAME / LIGHT / FOCUS</small>
-          </div>
-          <div className="camera-body depth-near">
-            <i className="camera-top" />
-            <div className="camera-lens">
-              <i />
-            </div>
-            <small>M/B.</small>
-          </div>
-        </>
-      )}
-      {key === 'mobile' && (
-        <>
-          <div className="creator-ring depth-back" />
-          <div className="creator-phone depth-mid">
-            <div className="device-speaker" />
-            <div className="creator-screen">
-              <Picture src="mobile-content-shoot" priority />
-              <div className="capture-guides" />
-              <span className="capture-dot" />
-              <i className="shutter-button" />
-            </div>
-            <div className="gimbal-stem">
-              <i />
-            </div>
-          </div>
-          <div className="reel-export depth-front">
-            <div className="export-crop">
-              <Picture src="mobile-content-shoot" />
-            </div>
-            <span>9:16 / 1:1</span>
-            <div className="export-options">
-              <i />
-              <i />
-              <i />
-            </div>
-          </div>
-        </>
-      )}
-      {key === 'content' && (
-        <>
-          <div className="editorial-notebook depth-back">
-            <div className="notebook-binding" />
-            <small>IDEAS / NOTES</small>
-            <Lines count={7} />
-            <span className="editorial-pencil" />
-          </div>
-          <div className="script-page depth-mid">
-            <small>MYBRANDSBUDDY / EDITORIAL</small>
-            <b>Aa</b>
-            <div className="script-highlight" />
-            <Lines count={6} />
-            <span>01 — SCRIPT</span>
-          </div>
-          <div className="published-page depth-front">
-            <div className="article-masthead">M/B.</div>
-            <div className="article-columns">
-              <Lines count={6} />
-              <Lines count={6} />
-            </div>
-            <span>CONTENT / PUBLISH</span>
-          </div>
-        </>
-      )}
-      {key === 'performance' && (
-        <>
-          <div className="campaign-console depth-back">
-            <small>CAMPAIGN / WORKSPACE</small>
-            <div className="audience-nodes">
-              {Array.from({ length: 9 }, (_, i) => (
-                <i key={i} />
-              ))}
-            </div>
-            <div className="test-pair">
-              <div>
-                A<Lines count={2} />
-              </div>
-              <div>
-                B<Lines count={2} />
-              </div>
-            </div>
-          </div>
-          <div className="funnel-stack depth-front">
-            {['AWARENESS', 'INTEREST', 'CONSIDERATION', 'CONVERSION'].map((x, i) => (
-              <div className={`funnel-layer funnel-${i}`} key={x}>
-                <span>{x}</span>
-                <i />
-              </div>
-            ))}
-          </div>
-          <svg className="data-route" viewBox="0 0 500 450">
-            <path
-              d="M80 140H195Q245 140 245 210V375"
-              fill="none"
-              stroke="currentColor"
-              strokeDasharray="3 9"
+  const config = (slug && SERVICE_HERO_CONFIG[slug]) || null;
+
+  if (config) {
+    return (
+      <div className="motion-graphic-stage group relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0713]">
+        {/* Ambient Purple Back Glow */}
+        <div
+          className="absolute -top-12 -right-12 w-72 h-72 bg-[#7c3aed]/20 rounded-full blur-[100px] pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute -bottom-12 -left-12 w-72 h-72 bg-[#c4a5ff]/15 rounded-full blur-[90px] pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* 4:3 3D Editorial Render Image */}
+        <Image
+          src={config.src}
+          alt={config.alt}
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 640px"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
+
+        {/* Left & Bottom Edge Vignette Gradient Fades smoothly into page */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#0a0713]/85 via-transparent to-transparent pointer-events-none z-10"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-[#0a0713]/85 via-transparent to-[#0a0713]/20 pointer-events-none z-10"
+          aria-hidden="true"
+        />
+
+        {/* Floating Top HUD Tag */}
+        <div className="absolute top-4 left-4 z-20 pointer-events-none">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[11px] font-mono tracking-wider uppercase text-white/90 shadow-lg">
+            <span
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: config.hudAccent }}
             />
-          </svg>
-        </>
-      )}
-      {key === 'estate' && (
-        <>
-          <div className="property-plinth depth-back">
-            <svg viewBox="0 0 500 350">
-              <path d="M60 250L270 330L450 210L250 140Z" />
-              <path d="M100 230V110L260 55L260 170Z M100 110L245 170L405 115L260 55 M245 170V285L405 230V115 M125 220V155L175 172V241 M275 175V238L320 221V159 M340 151V215L380 200V137" />
-            </svg>
+            <span>{config.hudTitle}</span>
           </div>
-          <div className="property-frame depth-mid">
-            <Picture src="residence-concept" priority />
-            <span className="architectural-grid" />
+        </div>
+
+        {/* Floating Bottom Metadata Badge */}
+        <div className="absolute bottom-4 right-4 z-20 pointer-events-none">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-[10px] font-mono tracking-widest uppercase text-white/60">
+            <span>MYBRANDSBUDDY // 3D EDITORIAL</span>
           </div>
-          <div className="property-listing depth-front">
-            <div>
-              <Picture src="residence-concept" />
-            </div>
-            <small>PROPERTY / CAMPAIGN</small>
-            <Lines count={3} />
-            <i />
-          </div>
-          <div className="property-plan depth-near">
-            <svg viewBox="0 0 130 100">
-              <path
-                d="M10 10H120V90H10ZM50 10V60H120M10 60H50M85 60V90"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
-        </>
-      )}
-      {key === 'search' && (
-        <>
-          <div className="search-architecture depth-back">
-            <svg viewBox="0 0 450 380">
-              <path
-                d="M225 55V130M75 130H375M75 130V245M225 130V245M375 130V245"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              {[
-                [190, 25],
-                [40, 235],
-                [190, 235],
-                [340, 235],
-              ].map(([x, y], i) => (
-                <g key={i}>
-                  <rect x={x} y={y} width="70" height="65" rx="8" />
-                  <path d={`M${x + 15} ${y + 20}h40m-40 13h25`} stroke="currentColor" />
-                </g>
-              ))}
-            </svg>
-          </div>
-          <div className="search-panel depth-front">
-            <div className="search-input">
-              <span>⌕</span>Services near you <i />
-            </div>
-            {[0, 1, 2].map((i) => (
-              <div className={`serp-row serp-${i}`} key={i}>
-                <i />
-                <div>
-                  <span />
-                  <Lines count={2} />
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="crawl-marker depth-near">&lt; / &gt;</div>
-        </>
-      )}
-      {key === 'aso' && (
-        <>
-          <div className="app-device depth-mid">
-            <div className="app-symbol">↗</div>
-            <Lines count={3} />
-            <div className="app-previews">
-              <i />
-              <i />
-              <i />
-            </div>
-            <div className="app-search">⌕</div>
-          </div>
-          <div className="app-keywords depth-front">
-            <small>LISTING / DISCOVERY</small>
-            <Lines count={4} />
-          </div>
-        </>
-      )}
-      {key === 'whatsapp' && (
-        <>
-          <div className="message-device depth-mid">
-            <div className="message-profile">
-              <i />
-              <Lines count={2} />
-            </div>
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className={`conversation-line conversation-${i}`}>
-                <Lines count={2} />
-                <span>✓</span>
-              </div>
-            ))}
-            <div className="message-composer">
-              <i />↗
-            </div>
-          </div>
-          <div className="consent-note depth-front">
-            <span>✓</span>
-            <small>OPT IN / FOLLOW UP</small>
-            <Lines count={2} />
-          </div>
-        </>
-      )}
-    </SceneFrame>
-  );
+        </div>
+      </div>
+    );
+  }
+
+  return <ServiceMotionGraphic theme={theme} slug={slug} />;
 }

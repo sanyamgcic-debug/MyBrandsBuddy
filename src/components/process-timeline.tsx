@@ -25,8 +25,8 @@ export function ProcessTimeline() {
         </div>
         <div className="process-track">
           {journey.map((step, i) => (
-            <Reveal key={step.title}>
-              <article className="process-stage">
+            <Reveal key={step.title} delay={i * 50} distance={20} direction="up">
+              <article className="process-stage group">
                 <span>{String(i + 1).padStart(2, '0')}</span>
                 <div>
                   <h3>{step.title}</h3>

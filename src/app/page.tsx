@@ -65,10 +65,10 @@ export default function Home() {
           <p>{agency.positioningBody}</p>
         </div>
       </section>
-      <section className="section capabilities-section">
-        <div className="container">
-          <Reveal>
-            <div className="section-heading-row">
+      <section className="section capabilities-section w-full px-3 sm:px-6 md:px-8 lg:px-10" id="services">
+        <div className="w-full">
+          <Reveal direction="up" distance={28}>
+            <div className="section-heading-row max-w-7xl mx-auto px-2 sm:px-4 mb-8">
               <SectionHeading
                 eyebrow="01 / Connected capabilities"
                 title={
@@ -87,7 +87,7 @@ export default function Home() {
       </section>
       <section className="section ecosystem-section">
         <div className="container">
-          <Reveal>
+          <Reveal direction="up" distance={28}>
             <SectionHeading
               eyebrow="02 / Built to work together"
               title={
@@ -111,36 +111,40 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="container">
-          <span className="eyebrow">Thoughtfully planned. Beautifully made.</span>
-          <h2>
-            Make the thinking
-            <br />
-            <em>worth seeing.</em>
-          </h2>
-          <ButtonLink href="/services/video-production" secondary>
-            Explore creative production
-          </ButtonLink>
-          <span className="image-caption">EDITORIAL CONCEPT / CREATIVE PRODUCTION</span>
+          <Reveal direction="up" distance={32}>
+            <span className="eyebrow">Thoughtfully planned. Beautifully made.</span>
+            <h2>
+              Make the thinking
+              <br />
+              <em>worth seeing.</em>
+            </h2>
+            <ButtonLink href="/services/video-production" secondary>
+              Explore creative production
+            </ButtonLink>
+            <span className="image-caption">EDITORIAL CONCEPT / CREATIVE PRODUCTION</span>
+          </Reveal>
         </div>
       </section>
       <section className="section why-editorial">
         <div className="container why-layout">
           <div>
-            <span className="eyebrow">03 / The way we think</span>
-            <h2>
-              The idea is only as good
-              <br />
-              as <em>what happens next.</em>
-            </h2>
-            <p>{agency.whyIntro}</p>
-            <Link className="text-link" href="/about">
-              A little more about us
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </Link>
+            <Reveal direction="up" distance={24}>
+              <span className="eyebrow">03 / The way we think</span>
+              <h2>
+                The idea is only as good
+                <br />
+                as <em>what happens next.</em>
+              </h2>
+              <p>{agency.whyIntro}</p>
+              <Link className="text-link" href="/about">
+                A little more about us
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            </Reveal>
           </div>
           <div className="principle-list">
             {agency.principles.map((item, i) => (
-              <Reveal key={item.title}>
+              <Reveal key={item.title} delay={i * 70} distance={20} direction="up">
                 <article>
                   <span>0{i + 1}</span>
                   <div>
@@ -156,37 +160,41 @@ export default function Home() {
       <ProcessTimeline />
       <section className="section work-section">
         <div className="container">
-          <div className="section-heading-row">
-            <SectionHeading
-              eyebrow="04 / A sense of what’s possible"
-              title={
-                <>
-                  Thinking you can see.
-                  <br />
-                  <em>Ideas you can feel.</em>
-                </>
-              }
-            />
-            <Link href="/work" className="text-link">
-              Explore creative directions
-              <ArrowUpRight size={17} aria-hidden="true" />
-            </Link>
-          </div>
+          <Reveal direction="up" distance={24}>
+            <div className="section-heading-row">
+              <SectionHeading
+                eyebrow="04 / A sense of what’s possible"
+                title={
+                  <>
+                    Thinking you can see.
+                    <br />
+                    <em>Ideas you can feel.</em>
+                  </>
+                }
+              />
+              <Link href="/work" className="text-link">
+                Explore creative directions
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
+          </Reveal>
           <Portfolio featured />
         </div>
       </section>
       <section className="section industry-section">
         <div className="container">
-          <SectionHeading
-            eyebrow="05 / Your world, understood"
-            title={
-              <>
-                Different markets.
-                <br />
-                <em>Real business context.</em>
-              </>
-            }
-          />
+          <Reveal direction="up" distance={24}>
+            <SectionHeading
+              eyebrow="05 / Your world, understood"
+              title={
+                <>
+                  Different markets.
+                  <br />
+                  <em>Real business context.</em>
+                </>
+              }
+            />
+          </Reveal>
           <Industries />
         </div>
       </section>
@@ -194,8 +202,7 @@ export default function Home() {
         <div className="container">
           <span className="eyebrow">The things worth building</span>
           <h2>
-            A clearer brand.
-            <br />A stronger presence.
+            A clearer brand. A stronger presence.
             <br />
             <em>A more connected business.</em>
           </h2>
@@ -210,25 +217,29 @@ export default function Home() {
       </section>
       <section className="section insights-section">
         <div className="container">
-          <div className="section-heading-row">
-            <SectionHeading
-              eyebrow="06 / Notes for the next move"
-              title={
-                <>
-                  Useful thinking.
-                  <br />
-                  <em>Worth a read.</em>
-                </>
-              }
-            />
-            <Link className="text-link" href="/blog">
-              All insights
-              <ArrowUpRight size={17} aria-hidden="true" />
-            </Link>
-          </div>
+          <Reveal direction="up" distance={24}>
+            <div className="section-heading-row">
+              <SectionHeading
+                eyebrow="06 / Notes for the next move"
+                title={
+                  <>
+                    Useful thinking.
+                    <br />
+                    <em>Worth a read.</em>
+                  </>
+                }
+              />
+              <Link className="text-link" href="/blog">
+                All insights
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
+          </Reveal>
           <div className="grid-three">
-            {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} />
+            {articles.map((article, i) => (
+              <Reveal key={article.slug} delay={i * 90} distance={24} direction="up">
+                <ArticleCard article={article} />
+              </Reveal>
             ))}
           </div>
         </div>

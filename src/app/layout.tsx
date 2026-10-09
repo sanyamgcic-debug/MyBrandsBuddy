@@ -4,12 +4,22 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { site } from '@/data/site';
 import { serializeJsonLd } from '@/lib/seo';
+import { Manrope } from 'next/font/google';
 import '@fontsource-variable/montserrat';
 import './framework.css';
 import './globals.css';
 import './premium.css';
 import './modern.css';
 import { PageTools } from '@/components/page-tools';
+import { SmoothScroll } from '@/components/smooth-scroll';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-manrope',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -31,8 +41,16 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: '#0b0b21' };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="mybrandsbuddy">
-      <body>
+    <html lang="en" data-theme="mybrandsbuddy" data-scroll-behavior="smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        />
+      </head>
+      <body className={manrope.variable}>
         <a href="#main-content" className="skip-link">
           {copy.app_layout.skip_to_content}
         </a>
@@ -42,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
         <PageTools />
+        <SmoothScroll />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

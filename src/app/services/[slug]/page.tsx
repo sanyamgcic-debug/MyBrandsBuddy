@@ -2,6 +2,8 @@ import { ServiceScene } from '@/components/service-scenes/service-scene';
 import type { Metadata } from 'next';
 import { serviceCopy } from '@/data/service-copy';
 import { ExactServicePage } from '@/components/exact-service-page';
+import { RealEstateShowcase } from '@/components/real-estate/real-estate-showcase';
+import { GraphicDesignPage } from '@/components/graphic-design/graphic-design-page';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, Check } from 'lucide-react';
@@ -48,7 +50,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const s = allServices.find((s) => s.slug === slug);
   if (!s) notFound();
+  if (slug === 'real-estate-marketing') {
+    return <RealEstateShowcase />;
+  }
   const content = serviceCopy.find((page) => page.slug === slug);
+  if (slug === 'graphic-design' && content) {
+    return <GraphicDesignPage content={content} service={s} />;
+  }
   if (content) return <ExactServicePage content={content} service={s} />;
   const cinematic = ['estate', 'video', 'photography'].includes(s.theme);
   return (

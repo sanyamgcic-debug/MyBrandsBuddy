@@ -1,0 +1,305 @@
+/* MyBrandsBuddy Official Brand Identity Tokens */
+:root {
+  --re-black: #000000;
+  --re-black-surface: #1a1a1a;
+  --re-card-black: #141417;
+  --re-card-border: rgba(255, 255, 255, 0.12);
+  --re-white: #ffffff;
+  --re-soft-white: #f8f9fa;
+  --re-brand: #8b5cf6;
+  --re-brand-dark: #662d91;
+  --re-brand-light: #a855f7;
+  --re-brand-glow: rgba(139, 92, 246, 0.45);
+  --re-brand-subtle: rgba(139, 92, 246, 0.15);
+  --re-brand-gradient: linear-gradient(135deg, #662d91 0%, #8b5cf6 100%);
+  --re-brand-gradient-hover: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  --re-charcoal: #18181c;
+  --re-muted-gray: #a1a1aa;
+  --re-light-border: rgba(0, 0, 0, 0.08);
+}
+
+.real-estate-page {
+  background-color: var(--re-black);
+  color: var(--re-white);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+  font-family: 'Montserrat Variable', 'Poppins', sans-serif;
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle architectural grid pattern overlay */
+.architectural-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.architectural-grid-bg-light {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Dramatic Curved Architectural Framing */
+.curved-hero-frame {
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 768px) {
+  .curved-hero-frame {
+    border-radius: 56px;
+  }
+}
+
+.curved-asymmetric-arch {
+  border-top-left-radius: 64px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 64px;
+  border-bottom-left-radius: 24px;
+}
+
+.curved-cantilever {
+  border-top-right-radius: 56px;
+  border-bottom-left-radius: 56px;
+}
+
+/* Brand Laser Glow Accents */
+.crimson-laser-tag,
+.re-laser-tag {
+  color: var(--re-brand);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crimson-laser-tag::before,
+.re-laser-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--re-brand);
+  box-shadow: 0 0 10px var(--re-brand);
+}
+
+.crimson-glow-box,
+.re-glow-box {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+.crimson-glow-btn,
+.re-glow-btn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #662d91 100%);
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 24px var(--re-brand-glow);
+}
+
+.crimson-glow-btn:hover,
+.re-glow-btn:hover {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  box-shadow: 0 10px 32px rgba(139, 92, 246, 0.65);
+  transform: translateY(-2px);
+}
+
+/* Circular Rotating Text Badge */
+.rotating-badge-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .rotating-badge-container {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.rotating-badge-svg {
+  animation: spinBadge 18s linear infinite;
+  transform-origin: center center;
+}
+
+.rotating-badge-container:hover .rotating-badge-svg {
+  animation-duration: 9s;
+}
+
+@keyframes spinBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Minimal Vertical Side Navigation Rail */
+.vertical-side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 14px 10px;
+  background: rgba(12, 12, 15, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .vertical-side-nav {
+    display: none;
+  }
+}
+
+.vertical-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 9999px;
+  color: var(--re-muted-gray);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.vertical-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.vertical-nav-item.active .vertical-nav-dot {
+  background: var(--re-brand);
+  box-shadow: 0 0 12px var(--re-brand);
+  transform: scale(1.4);
+}
+
+.vertical-nav-label {
+  position: absolute;
+  right: 28px;
+  opacity: 0;
+  pointer-events: none;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  transform: translateX(10px);
+}
+
+.vertical-nav-item:hover .vertical-nav-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Horizontal Catalog Container with Hidden Scrollbar */
+.catalog-horizontal-scroll {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 24px;
+  padding-top: 12px;
+}
+
+.catalog-horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-card-snap {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Floating Circular Peek Mask Component */
+.peek-mask-stage {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: crosshair;
+  background: #000;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .peek-mask-stage {
+    min-height: 620px;
+    border-radius: 56px;
+  }
+}
+
+.peek-mask-lens {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 2px solid var(--re-brand);
+  box-shadow: 0 0 35px var(--re-brand-glow), inset 0 0 25px rgba(139, 92, 246, 0.25);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+  z-index: 25;
+}
+
+/* Architectural Hairline Dividers */
+.hairline-divider-dark {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+  width: 100%;
+}
+
+.hairline-divider-light {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 80%, transparent);
+  width: 100%;
+}
+
+/* High Contrast Section Styling */
+.section-matte-black {
+  background-color: var(--re-black);
+  color: var(--re-white);
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-clean-white {
+  background-color: var(--re-soft-white);
+  color: #070709;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

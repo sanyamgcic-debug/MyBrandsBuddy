@@ -65,7 +65,7 @@ p {
   background: #0d0b1cf2;
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(20px);
-  z-index: 100;
+  z-index: 1000;
 }
 .header-inner {
   height: 86px;

@@ -72,6 +72,17 @@ export function Header() {
     media.addEventListener('change', changed);
     return () => media.removeEventListener('change', changed);
   }, []);
+  // -- Scroll-linked header response --
+  useEffect(() => {
+    const el = header.current;
+    if (!el) return;
+    const onScroll = () => {
+      el.classList.toggle('is-scrolled', window.scrollY > 50);
+    };
+    onScroll(); // check initial state
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   return (
     <header ref={header} className="site-header">
       <div className="container header-inner">
