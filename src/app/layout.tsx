@@ -42,14 +42,6 @@ export const viewport: Viewport = { themeColor: '#0b0b21' };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" data-theme="mybrandsbuddy" data-scroll-behavior="smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-        />
-      </head>
       <body className={manrope.variable}>
         <a href="#main-content" className="skip-link">
           {copy.app_layout.skip_to_content}

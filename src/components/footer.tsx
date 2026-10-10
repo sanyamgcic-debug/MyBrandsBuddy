@@ -49,6 +49,7 @@ export function Footer() {
                 <h2>{group}</h2>
                 {services
                   .filter((s) => s.category === group)
+                  .sort((a, b) => a.number.localeCompare(b.number))
                   .map((s) => (
                     <Link key={s.slug} href={`/services/${s.slug}`}>
                       {s.shortTitle}

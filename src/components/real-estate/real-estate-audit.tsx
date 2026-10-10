@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowUpRight, CheckCircle2, Search, Sliders, Smartphone, Target, TrendingUp, Sparkles, AlertCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface AuditCriterion {
   id: string;
@@ -125,7 +125,7 @@ export function RealEstateAudit() {
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-mono tracking-widest uppercase text-[#a855f7] font-bold">
-                      0{index + 1} // {item.category}
+                      0{index + 1} {'//'} {item.category}
                     </span>
                     <span className={`text-xs font-mono font-bold ${isSelected ? 'text-[#c8a4ff]' : 'text-white/40'}`}>
                       {item.impactScore}% BENCHMARK

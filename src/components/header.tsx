@@ -141,6 +141,7 @@ export function Header() {
                     <h2>{group}</h2>
                     {services
                       .filter((s) => s.category === group)
+                      .sort((a, b) => a.number.localeCompare(b.number))
                       .map((s) => (
                         <Link href={`/services/${s.slug}`} key={s.slug} onClick={close}>
                           <span>{s.number}</span>

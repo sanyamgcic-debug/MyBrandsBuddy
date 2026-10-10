@@ -1,6 +1,8 @@
 import { editorialCopy } from '@/data/interface';
 import Image from 'next/image';
-import { PageHero, ButtonLink } from '@/components/ui';
+import { ButtonLink } from '@/components/ui';
+import { AboutRobot } from '@/components/about-robot';
+import styles from '@/components/about-robot.module.css';
 import { ProcessTimeline } from '@/components/process-timeline';
 import { AgencyCTA } from '@/components/agency-cta';
 import { agency } from '@/data/agency';
@@ -14,19 +16,24 @@ export const metadata = pageMetadata(
 export default function About() {
   return (
     <>
-      <PageHero
-        eyebrow="A little about your buddy"
-        title={
-          <>
-            Business thinking.
-            <br />
-            Creative instinct.
-            <br />
-            <em>Connected execution.</em>
-          </>
-        }
-        description={about.intro}
-      />
+      <section className={`page-hero dark ${styles.hero}`}>
+        <div className={`container ${styles.layout}`}>
+          <div className={styles.copy}>
+            <span className="eyebrow">
+              <span />A little about your buddy
+            </span>
+            <h1>
+              Business thinking.
+              <br />
+              Creative instinct.
+              <br />
+              <em>Connected execution.</em>
+            </h1>
+            <p>{about.intro}</p>
+          </div>
+          <AboutRobot />
+        </div>
+      </section>
       <section className="section">
         <div className="container about-editorial">
           <div className="about-manifesto">

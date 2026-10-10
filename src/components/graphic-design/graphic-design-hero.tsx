@@ -19,8 +19,10 @@ export function GraphicDesignHero() {
     // 1. Check prefers-reduced-motion
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mediaQuery.matches) {
-      setIsReducedMotion(true);
-      setIsPlaying(false);
+      queueMicrotask(() => {
+        setIsReducedMotion(true);
+        setIsPlaying(false);
+      });
       if (videoRef.current) {
         videoRef.current.pause();
       }
@@ -91,24 +93,6 @@ export function GraphicDesignHero() {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [isPlaying, isReducedMotion, autoplayFailed]);
-
-  const togglePlayPause = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-          setAutoplayFailed(false);
-        })
-        .catch(() => {
-          setAutoplayFailed(true);
-        });
-    }
-  };
 
   return (
     <section
