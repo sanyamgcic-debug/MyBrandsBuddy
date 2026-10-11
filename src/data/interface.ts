@@ -11,7 +11,7 @@ export const interfaceCopy = {
 
 export const editorialCopy = {
   home: {
-    signoff: 'Small businesses. Bigger tomorrows.',
+    signoff: 'The Best Buddy for Your Business',
     servicesAside:
       'From local search to creative production. Explore the support your business needs.',
     ecosystemIntro:

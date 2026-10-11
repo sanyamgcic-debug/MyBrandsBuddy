@@ -179,15 +179,16 @@ main {
 .premium-hero {
   position: relative;
   background: radial-gradient(ellipse at 85% 20%, #662d9126, transparent 65%), #0d0b1c;
-  overflow-x: clip;
+  overflow: hidden;
 }
 .premium-hero:before {
   content: '';
   position: absolute;
-  width: 700px;
+  width: min(700px, 100vw);
   height: 700px;
   top: -150px;
-  right: -240px;
+  right: 0;
+  max-width: 100%;
   background: radial-gradient(circle, #8b5cf616, transparent 70%);
   pointer-events: none;
   animation: ambient-arrive 1.4s ease-out both;
@@ -1457,7 +1458,7 @@ main {
 
 .premium-hero {
   min-height: 680px;
-  overflow-x: clip;
+  overflow: hidden !important;
 }
 
 .premium-hero-grid {

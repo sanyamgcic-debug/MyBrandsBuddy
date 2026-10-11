@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { Rocket, Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react';
 import { site } from '@/data/site';
 import { services, serviceGroups } from '@/data/services';
 export function Header() {
@@ -87,13 +88,14 @@ export function Header() {
     <header ref={header} className="site-header">
       <div className="container header-inner">
         <Link href="/" aria-label={`${site.name} home`} className="brand" onClick={close}>
-          <span className="brand-icon">
-            <Rocket size={24} aria-hidden="true" />
-          </span>
-          <span>
-            My<span className="brand-accent">Brands</span>Buddy
-            <span className="brand-dot">.</span>
-          </span>
+          <Image
+            src="/brand/logo-dark.png"
+            alt="MyBrandsBuddy logo"
+            width={1024}
+            height={655}
+            priority
+            style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+          />
         </Link>
         <button
           ref={toggle}
