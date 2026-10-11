@@ -23,7 +23,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'MyBrandsBuddy | Small Businesses. Bigger Tomorrows.',
+    default: 'MyBrandsBuddy | The Best Buddy for Your Business',
     template: '%s | MyBrandsBuddy',
   },
   description: site.description,
@@ -61,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Organization',
               name: site.name,
               url: site.url,
+              slogan: 'The Best Buddy for Your Business',
               email: site.email,
               description: site.description,
               areaServed: 'India',

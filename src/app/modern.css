@@ -27,23 +27,43 @@ h3 {
   letter-spacing: -0.035em;
 }
 .brand {
-  font-size: 21px;
-  font-weight: 780;
-  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
   gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.brand:hover {
+  opacity: 0.92;
 }
 .brand-accent {
-  color: #b98af7;
+  background: linear-gradient(135deg, #b98af7 0%, #d8b4fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 .brand-dot {
-  color: #fff;
-}
-.brand-icon {
   color: #b98af7;
 }
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #b98af7;
+  filter: drop-shadow(0 0 10px rgba(185, 138, 247, 0.45));
+  transform: rotate(-6deg);
+  transition: transform 0.3s ease;
+}
+.brand:hover .brand-icon {
+  transform: rotate(0deg) scale(1.06);
+}
 .brand-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 .section-heading h2 {
   max-width: 780px;

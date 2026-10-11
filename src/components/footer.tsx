@@ -12,10 +12,11 @@ export function Footer() {
               <Rocket size={24} aria-hidden="true" />
             </span>
             <span>
-              My<span className="brand-accent">Brands</span>Buddy.
+              My<span className="brand-accent">Brands</span>Buddy
+              <span className="brand-dot">.</span>
             </span>
           </Link>
-          <span>Independent thinking. Connected execution.</span>
+          <span>The Best Buddy for Your Business</span>
         </div>
         <div className="footer-main">
           <div className="footer-contact">
