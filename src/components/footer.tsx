@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { Rocket, ArrowUpRight } from 'lucide-react';
 import { site } from '@/data/site';
 import { serviceGroups, services } from '@/data/services';
 export function Footer() {
@@ -9,15 +8,14 @@ export function Footer() {
       <div className="container">
         <div className="footer-topline">
           <Link href="/" className="brand" aria-label="MyBrandsBuddy home">
-            <Image
-              src="/brand/logo-dark.png"
-              alt="MyBrandsBuddy logo"
-              width={1024}
-              height={655}
-              style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
-            />
+            <span className="brand-icon">
+              <Rocket size={24} aria-hidden="true" />
+            </span>
+            <span>
+              My<span className="brand-accent">Brands</span>Buddy.
+            </span>
           </Link>
-          <span>The Best Buddy for Your Business</span>
+          <span>Independent thinking. Connected execution.</span>
         </div>
         <div className="footer-main">
           <div className="footer-contact">

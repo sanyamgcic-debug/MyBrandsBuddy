@@ -23,19 +23,10 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'MyBrandsBuddy | The Best Buddy for Your Business',
+    default: 'MyBrandsBuddy | Small Businesses. Bigger Tomorrows.',
     template: '%s | MyBrandsBuddy',
   },
   description: site.description,
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/brand/icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/brand/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/brand/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -70,8 +61,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Organization',
               name: site.name,
               url: site.url,
-              logo: `${site.url}/brand/logo-wide.png`,
-              slogan: 'The Best Buddy for Your Business',
               email: site.email,
               description: site.description,
               areaServed: 'India',
