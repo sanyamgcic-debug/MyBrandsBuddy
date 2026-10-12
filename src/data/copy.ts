@@ -57,7 +57,7 @@ export const copy = {
     with_a_conversation: 'with a conversation.',
     email_your_buddy: 'Email your buddy',
     local_understanding_national_reach: 'Local understanding. National reach.',
-    in_your_free_audit_well_discuss: 'In your free audit, we’ll discuss:',
+    in_your_free_audit_well_discuss: 'In our conversation, we’ll discuss:',
   },
   app_error: {
     a_small_pause: 'A small pause',
@@ -184,7 +184,7 @@ export const copy = {
     business_name: 'Business name *',
     the_business_youre_building: 'The business you’re building',
     how_can_we_help: 'How can we help? *',
-    free_brand_audit: 'Free brand audit',
+    free_brand_audit: 'Project enquiry',
     what_would_you_like_to_grow: 'What would you like to grow? *',
     tell_us_what_you_do_where_youre:
       'Tell us what you sell, your target location, website or social links, and your main goal. Include any launch date or specific deliverables you have in mind.',

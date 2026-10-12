@@ -9,7 +9,7 @@ import { isContactConfigured } from '@/lib/contact';
 import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata(
   'Let’s Grow Your Brand',
-  'Book a free 30-minute brand audit with MyBrandsBuddy. Tell us about your business and take the next step online.',
+  'Get in touch with MyBrandsBuddy. Tell us about your business and take the next step online.',
   '/contact',
 );
 export default async function ContactPage({
@@ -23,7 +23,7 @@ export default async function ContactPage({
     selected = 'Business & Marketing Consulting';
   }
   const allowed = [...plans.map((p) => p.name), ...services.map((s) => s.title)];
-  const initialInterest = allowed.includes(selected) ? selected : 'Free brand audit';
+  const initialInterest = allowed.includes(selected) ? selected : 'Project enquiry';
   return (
     <>
       <PageHero
@@ -45,7 +45,9 @@ export default async function ContactPage({
               <br />
               {copy.app_contact.with_a_conversation}
             </h2>
-            <p>{site.auditDescription}</p>
+            <p>
+              Tell us about your project, goals, and timeline. We’ll look at what’s holding your business back online and map out your next steps.
+            </p>
             <div className="contact-channel">
               <Mail aria-hidden="true" />
               <div>

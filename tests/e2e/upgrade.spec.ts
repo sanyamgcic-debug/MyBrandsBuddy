@@ -44,8 +44,7 @@ test('capability controls, industry explorer, work filters and service enquiries
   await expect(page.locator('#interest')).toHaveValue(
     'Website Development — WordPress & Custom Code',
   );
-  await expect(page.getByLabel('Phone (optional)')).toBeVisible();
-  await expect(page.getByLabel('Indicative budget')).toBeVisible();
+  await expect(page.getByLabel('Phone')).toBeVisible();
 });
 test('all service pages and primary pages have complete visuals', async ({ page }, testInfo) => {
   test.setTimeout(120000);

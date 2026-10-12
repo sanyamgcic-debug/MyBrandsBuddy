@@ -6,7 +6,6 @@ import { ArrowUpRight } from 'lucide-react';
 import { plans } from '@/data/pricing';
 import { allServices as services } from '@/data/services';
 import { site } from '@/data/site';
-import { budgetRanges } from '@/data/agency';
 import { contactSchema } from '@/lib/contact';
 export function ContactForm({
   initialInterest,
@@ -36,8 +35,8 @@ export function ContactForm({
       return;
     }
     if (!enabled) {
-      const { name, email, business, interest, message, phone, budget } = result.data;
-      const body = `Name: ${name}\nEmail: ${email}\nBusiness: ${business}\nPhone: ${phone}\nBudget: ${budget}\nInterest: ${interest}\n\n${message}`;
+      const { name, email, business, interest, message, phone } = result.data;
+      const body = `Name: ${name}\nEmail: ${email}\nBusiness: ${business}\nPhone: ${phone}\nInterest: ${interest}\n\n${message}`;
       window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`${interest} — ${business}`)}&body=${encodeURIComponent(body)}`;
       setFailed(false);
       setStatus(
@@ -105,22 +104,22 @@ export function ContactForm({
           />
         </div>
       </div>
-      <div className="field">
-        <label htmlFor="business">{copy.components_contact_form.business_name}</label>
-        <input
-          className="du-input w-full"
-          id="business"
-          name="business"
-          autoComplete="organization"
-          placeholder={copy.components_contact_form.the_business_youre_building}
-          required
-          minLength={2}
-          maxLength={160}
-        />
-      </div>
       <div className="form-grid">
         <div className="field">
-          <label htmlFor="phone">Phone (optional)</label>
+          <label htmlFor="business">{copy.components_contact_form.business_name}</label>
+          <input
+            className="du-input w-full"
+            id="business"
+            name="business"
+            autoComplete="organization"
+            placeholder={copy.components_contact_form.the_business_youre_building}
+            required
+            minLength={2}
+            maxLength={160}
+          />
+        </div>
+        <div className="field">
+          <label htmlFor="phone">Phone</label>
           <input
             className="du-input w-full"
             id="phone"
@@ -129,14 +128,6 @@ export function ContactForm({
             autoComplete="tel"
             maxLength={30}
           />
-        </div>
-        <div className="field">
-          <label htmlFor="budget">Indicative budget</label>
-          <select className="du-select w-full" id="budget" name="budget">
-            {budgetRanges.map((b) => (
-              <option key={b}>{b}</option>
-            ))}
-          </select>
         </div>
       </div>
       <div className="field">

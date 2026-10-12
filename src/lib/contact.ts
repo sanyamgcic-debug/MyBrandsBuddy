@@ -27,7 +27,7 @@ export const contactSchema = z.object({
     .max(120)
     .refine(
       (value) =>
-        ['Free brand audit', ...plans.map((p) => p.name), ...services.map((s) => s.title)].includes(
+        ['Project enquiry', 'Free brand audit', ...plans.map((p) => p.name), ...services.map((s) => s.title)].includes(
           value,
         ),
       'Please select a valid service.',
