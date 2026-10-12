@@ -110,6 +110,9 @@ export function Header() {
           className={open ? 'main-nav is-open' : 'main-nav'}
           aria-label="Main navigation"
         >
+          <Link href="/" aria-current={pathname === '/' ? 'page' : undefined} onClick={close}>
+            Home
+          </Link>
           <div className="services-nav">
             <button
               ref={serviceToggle}
@@ -154,7 +157,6 @@ export function Header() {
             </div>
           </div>
           {[
-            { href: '/work', label: 'Work' },
             { href: '/about', label: 'About' },
             { href: '/blog', label: 'Insights' },
             { href: '/contact', label: 'Contact' },

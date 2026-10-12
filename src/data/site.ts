@@ -11,8 +11,8 @@ export const site = {
     'Start with a free 30-minute brand audit. We’ll look at what’s holding your business back online and map out your next steps.',
 } as const;
 export const navigation = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
   { label: 'Insights', href: '/blog' },
   { label: 'Contact', href: '/contact' },

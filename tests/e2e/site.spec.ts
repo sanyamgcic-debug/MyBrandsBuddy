@@ -91,9 +91,9 @@ test('navigation works on mobile and FAQ opens', async ({ page, isMobile }) => {
     await page.getByRole('button', { name: 'Open navigation' }).click();
     await page
       .getByRole('navigation', { name: 'Main navigation' })
-      .getByRole('link', { name: 'Work', exact: true })
+      .getByRole('link', { name: 'About', exact: true })
       .click();
-    await expect(page).toHaveURL(/\/work$/);
+    await expect(page).toHaveURL(/\/about$/);
     await expect(page.getByRole('button', { name: 'Open navigation' })).toHaveAttribute(
       'aria-expanded',
       'false',
