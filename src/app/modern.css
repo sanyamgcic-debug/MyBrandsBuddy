@@ -775,8 +775,10 @@ main {
 }
 .back-to-top {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: 35px;
+  bottom: 100px;
+  bottom: max(100px, calc(100px + env(safe-area-inset-bottom, 0px)));
+  right: max(35px, env(safe-area-inset-right, 35px));
   z-index: 80;
   width: 46px;
   height: 46px;
@@ -1316,8 +1318,10 @@ main {
     font-size: 30px;
   }
   .back-to-top {
-    right: 14px;
-    bottom: max(14px, env(safe-area-inset-bottom));
+    right: 23px;
+    bottom: 86px;
+    bottom: max(86px, calc(86px + env(safe-area-inset-bottom, 0px)));
+    right: max(23px, env(safe-area-inset-right, 23px));
     width: 44px;
     height: 44px;
     min-height: 44px;
