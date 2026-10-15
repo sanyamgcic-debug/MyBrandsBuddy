@@ -4,7 +4,7 @@ export const site = {
   email: 'contact@mybrandsbuddy.com',
   whatsapp: '+91 99712 34965',
   whatsappRaw: '9971234965',
-  whatsappLink: 'https://wa.me/919971234965?text=Hi%20MyBrandsBuddy%2C%20I%20would%20like%20to%20discuss%20a%20project',
+  whatsappLink: 'https://wa.me/919971234965?text=Hi%20MyBrandsBuddy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20digital%20marketing%20services.',
   phone: '+91 99712 34965',
   phoneTel: 'tel:+919971234965',
   tagline: 'The Best Buddy for Your Business',
