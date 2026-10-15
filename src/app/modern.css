@@ -378,8 +378,7 @@ main {
 .panel-swap {
   animation: panel-in 0.25s ease-out;
 }
-.industry-options button,
-.growth-tabs button {
+.industry-options button {
   border-radius: 8px 8px 0 0;
   transition:
     background 0.2s,
@@ -388,8 +387,7 @@ main {
 .industry-options button.active {
   box-shadow: inset 3px 0 #b58aeb;
 }
-.industry-options button:hover,
-.growth-tabs button:hover {
+.industry-options button:hover {
   background: #ad82e510;
 }
 .service-category-tabs button,
@@ -1229,9 +1227,7 @@ main {
   .growth-explanation h3 {
     font-size: 35px;
   }
-  .growth-tabs button {
-    font-size: 16px;
-  }
+
   .industry-options button {
     font-size: 12px;
     padding: 19px 10px;

@@ -217,42 +217,7 @@ export function HeroEcosystem() {
   );
 }
 
-export function GrowthEcosystem() {
-  const [active, setActive] = useState(0);
-  const item = growthLevers[active];
-  return (
-    <div className="growth-system">
-      <div className="growth-tabs" role="group" aria-label="Explore growth levers">
-        {growthLevers.map((lever, i) => (
-          <button
-            key={lever.title}
-            onClick={() => setActive(i)}
-            aria-pressed={active === i}
-            className={active === i ? 'active' : ''}
-          >
-            <span>0{i + 1}</span>
-            {lever.title}
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </button>
-        ))}
-      </div>
-      <SpotlightCard className="growth-explanation" aria-live="polite">
-        <span className="oversized-index" aria-hidden="true">
-          0{active + 1}
-        </span>
-        <div key={item.title} className="panel-swap">
-          <span className="eyebrow">Each part makes the next stronger</span>
-          <h3>{item.title}</h3>
-          <p>{item.detail}</p>
-          <Link className="text-link" href={`/services/${item.service}`}>
-            {item.label}
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
-        </div>
-      </SpotlightCard>
-    </div>
-  );
-}
+export { GrowthEcosystem } from './growth-ecosystem';
 export function Industries() {
   const [active, setActive] = useState(0);
   const item = industryStories[active];
