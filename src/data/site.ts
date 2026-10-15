@@ -2,6 +2,11 @@ export const site = {
   name: 'MyBrandsBuddy',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://mybrandsbuddy.com',
   email: 'contact@mybrandsbuddy.com',
+  whatsapp: '+91 99712 34965',
+  whatsappRaw: '9971234965',
+  whatsappLink: 'https://wa.me/919971234965?text=Hi%20MyBrandsBuddy%2C%20I%20would%20like%20to%20discuss%20a%20project',
+  phone: '+91 99712 34965',
+  phoneTel: 'tel:+919971234965',
   tagline: 'The Best Buddy for Your Business',
   description:
     'Strategy, marketing, technology and creative production. MyBrandsBuddy helps businesses across India get found, get chosen and grow.',

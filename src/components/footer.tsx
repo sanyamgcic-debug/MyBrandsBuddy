@@ -29,6 +29,16 @@ export function Footer() {
               {site.email}
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-whatsapp flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors"
+              aria-label={`Chat on WhatsApp at ${site.whatsapp}`}
+            >
+              <span>WhatsApp: {site.whatsapp}</span>
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
             <p>{site.location}</p>
             <div className="footer-quick">
               {[

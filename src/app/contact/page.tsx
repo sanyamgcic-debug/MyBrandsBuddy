@@ -1,5 +1,5 @@
 import { copy } from '@/data/copy';
-import { Mail, MapPin, Check } from 'lucide-react';
+import { Mail, MapPin, Check, Phone, ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/ui';
 import { ContactForm } from '@/components/contact-form';
 import { site } from '@/data/site';
@@ -48,6 +48,24 @@ export default async function ContactPage({
             <p>
               Tell us about your project, goals, and timeline. We’ll look at what’s holding your business back online and map out your next steps.
             </p>
+            <div className="contact-channel">
+              <Phone aria-hidden="true" />
+              <div>
+                <strong>WhatsApp & Direct Line</strong>
+                <a
+                  href={site.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whatsapp-contact-link flex items-center gap-1.5"
+                >
+                  <span>{site.whatsapp}</span>
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </a>
+                <span className="contact-subtext block text-xs text-muted-foreground mt-0.5">
+                  Instant chat on WhatsApp or direct call
+                </span>
+              </div>
+            </div>
             <div className="contact-channel">
               <Mail aria-hidden="true" />
               <div>

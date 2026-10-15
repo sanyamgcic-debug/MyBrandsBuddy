@@ -200,6 +200,17 @@ export function ContactForm({
         {copy.components_contact_form.prefer_to_email}
         <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
+      <p className="whatsapp-fallback mt-2 text-sm text-purple-200/80">
+        Prefer WhatsApp? Quick chat at{' '}
+        <a
+          href={site.whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-emerald-400 hover:text-emerald-300 font-semibold underline underline-offset-4"
+        >
+          {site.whatsapp} ↗
+        </a>
+      </p>
     </form>
   );
 }

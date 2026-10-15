@@ -63,6 +63,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               url: site.url,
               slogan: 'The Best Buddy for Your Business',
               email: site.email,
+              telephone: site.phone,
+              contactPoint: [
+                {
+                  '@type': 'ContactPoint',
+                  telephone: site.phone,
+                  contactType: 'customer support',
+                  availableLanguage: ['English', 'Hindi'],
+                },
+              ],
               description: site.description,
               areaServed: 'India',
             }),
