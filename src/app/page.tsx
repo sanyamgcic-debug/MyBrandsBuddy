@@ -7,7 +7,6 @@ import { ButtonLink, SectionHeading } from '@/components/ui';
 import { HeroEcosystem, GrowthEcosystem, Industries } from '@/components/agency-interactions';
 import { ServiceDirectory } from '@/components/service-directory';
 import { ProcessTimeline } from '@/components/process-timeline';
-import { Portfolio } from '@/components/portfolio';
 import { AgencyCTA } from '@/components/agency-cta';
 import { Reveal } from '@/components/reveal';
 import { ArticleCard } from '@/components/cards';
@@ -158,34 +157,11 @@ export default function Home() {
         </div>
       </section>
       <ProcessTimeline />
-      <section className="section work-section">
-        <div className="container">
-          <Reveal direction="up" distance={24}>
-            <div className="section-heading-row">
-              <SectionHeading
-                eyebrow="04 / A sense of what’s possible"
-                title={
-                  <>
-                    Thinking you can see.
-                    <br />
-                    <em>Ideas you can feel.</em>
-                  </>
-                }
-              />
-              <Link href="/work" className="text-link">
-                Explore creative directions
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
-          </Reveal>
-          <Portfolio featured />
-        </div>
-      </section>
       <section className="section industry-section">
         <div className="container">
           <Reveal direction="up" distance={24}>
             <SectionHeading
-              eyebrow="05 / Your world, understood"
+              eyebrow="04 / Your world, understood"
               title={
                 <>
                   Different markets.
@@ -220,7 +196,7 @@ export default function Home() {
           <Reveal direction="up" distance={24}>
             <div className="section-heading-row">
               <SectionHeading
-                eyebrow="06 / Notes for the next move"
+                eyebrow="05 / Notes for the next move"
                 title={
                   <>
                     Useful thinking.
