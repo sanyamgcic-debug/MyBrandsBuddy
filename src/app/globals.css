@@ -248,8 +248,7 @@ p {
   color: #bc72f4;
   transform: rotate(-8deg);
 }
-.brand-accent,
-.brand-dot {
+.brand-accent {
   color: #c381f4;
 }
 .main-nav {

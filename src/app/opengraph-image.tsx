@@ -22,7 +22,6 @@ export default function Image() {
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <div style={{ fontSize: 32, fontWeight: 800, display: 'flex', letterSpacing: '-1px' }}>
           My<span style={{ color: '#b98af7' }}>Brands</span>Buddy
-          <span style={{ color: '#b98af7' }}>.</span>
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

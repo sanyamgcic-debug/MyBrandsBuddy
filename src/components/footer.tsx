@@ -13,7 +13,6 @@ export function Footer() {
             </span>
             <span>
               My<span className="brand-accent">Brands</span>Buddy
-              <span className="brand-dot">.</span>
             </span>
           </Link>
           <span>The Best Buddy for Your Business</span>

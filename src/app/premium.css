@@ -75,8 +75,7 @@ p {
 .brand {
   color: #fff;
 }
-.brand-accent,
-.brand-dot {
+.brand-accent {
   color: #c5a0f4;
 }
 .main-nav {

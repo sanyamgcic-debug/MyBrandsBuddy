@@ -92,7 +92,6 @@ export function Header() {
           </span>
           <span>
             My<span className="brand-accent">Brands</span>Buddy
-            <span className="brand-dot">.</span>
           </span>
         </Link>
         <button
