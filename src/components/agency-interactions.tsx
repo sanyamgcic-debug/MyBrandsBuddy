@@ -94,20 +94,23 @@ export function HeroEcosystem() {
   const [isPaused, setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isSmallMobile, setIsSmallMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-      setIsSmallMobile(window.innerWidth < 420);
+      const w = window.innerWidth;
+      setIsSmallMobile(w < 420);
+      setIsMobile(w < 640);
+      setIsTablet(w < 1150);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const r1 = isSmallMobile ? 65 : isMobile ? 80 : 120;
-  const r2 = isSmallMobile ? 102 : isMobile ? 125 : 185;
-  const r3 = isSmallMobile ? 140 : isMobile ? 168 : 250;
+  const r1 = isSmallMobile ? 65 : isMobile ? 80 : isTablet ? 95 : 110;
+  const r2 = isSmallMobile ? 102 : isMobile ? 125 : isTablet ? 145 : 170;
+  const r3 = isSmallMobile ? 140 : isMobile ? 168 : isTablet ? 195 : 230;
 
   const getRadius = (orbit: number) => {
     switch (orbit) {
@@ -125,7 +128,7 @@ export function HeroEcosystem() {
 
   return (
     <div
-      className="hero-system relative flex items-center justify-center w-full min-h-[500px] md:min-h-[560px] lg:min-h-[600px] select-none overflow-visible md:-translate-y-8 lg:-translate-y-14"
+      className="hero-system relative flex items-center justify-center w-full min-h-[340px] sm:min-h-[380px] md:min-h-[450px] lg:min-h-[510px] select-none overflow-visible"
       role="region"
       aria-label="Solar System capability explorer"
     >
@@ -141,7 +144,7 @@ export function HeroEcosystem() {
       </span>
 
       {/* Planetary Solar System Orbit Container (Full unclipped circular space) */}
-      <div className="relative flex items-center justify-center w-full h-[500px] md:h-[560px] lg:h-[600px]">
+      <div className="relative flex items-center justify-center w-full h-[340px] sm:h-[380px] md:h-[450px] lg:h-[510px]">
         {/* Full Orbit Circles */}
         <OrbitingCircles radius={r1} path strokeColor="rgba(192, 132, 252, 0.25)" strokeDasharray="4 6" />
         <OrbitingCircles radius={r2} path strokeColor="rgba(168, 85, 247, 0.2)" strokeDasharray="5 7" />

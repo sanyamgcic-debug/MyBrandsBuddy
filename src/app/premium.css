@@ -147,16 +147,15 @@ p {
   font-size: 9px;
 }
 .premium-hero {
-  padding: 70px 0 25px;
+  padding: 58px 0 20px;
   overflow: hidden;
   background: radial-gradient(ellipse at 90% 30%, #32214d55, transparent 60%);
 }
 .premium-hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   align-items: center;
-  min-height: 570px;
-  gap: 40px;
+  gap: 30px;
 }
 .premium-hero h1 {
   font-size: clamp(50px, 5.6vw, 80px);
@@ -193,7 +192,6 @@ p {
   color: #b1adc0;
 }
 .hero-system {
-  height: 490px;
   position: relative;
 }
 .system-rings {
@@ -1742,15 +1740,6 @@ p {
   font-size: 22px;
   color: #d8c1ef;
 }
-.footer-quick {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-.footer-quick a {
-  font-size: 12px;
-}
 .footer-socials {
   display: flex;
   align-items: center;
@@ -2403,7 +2392,8 @@ p {
 }
 @media (max-width: 650px) {
   .premium-hero {
-    padding-top: 45px;
+    padding-top: 32px;
+    padding-bottom: 20px;
   }
   .premium-hero-grid {
     grid-template-columns: 1fr;
@@ -2417,8 +2407,7 @@ p {
   .hero-system {
     max-width: 430px;
     width: 100%;
-    margin: 30px auto 0;
-    height: 420px;
+    margin: 24px auto 0;
   }
   .system-rings {
     inset: 20px 20px 80px;

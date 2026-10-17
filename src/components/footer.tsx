@@ -94,19 +94,6 @@ export function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="footer-quick">
-              {[
-                { name: 'Work', href: '/work' },
-                { name: 'About', href: '/about' },
-                { name: 'Insights', href: '/blog' },
-                { name: 'Pricing', href: '/pricing' },
-                { name: 'Contact', href: '/contact' },
-              ].map((x) => (
-                <Link key={x.href} href={x.href}>
-                  {x.name}
-                </Link>
-              ))}
-            </div>
           </div>
           <div className="footer-service-groups">
             {serviceGroups.map((group) => (
