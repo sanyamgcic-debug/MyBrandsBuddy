@@ -140,7 +140,7 @@ export function AsymmetricCatalog() {
 
   return (
     <section id="catalog" className="section-matte-black py-24 md:py-32 relative overflow-hidden architectural-grid-bg">
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Header with Horizontal Navigation Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 border-b border-white/10 pb-8">
           <div>

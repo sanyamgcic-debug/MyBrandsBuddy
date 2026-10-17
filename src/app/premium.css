@@ -12,7 +12,8 @@ body {
   color: var(--ink);
 }
 .container {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 100%;
 }
 h1,
 h2,
@@ -103,7 +104,7 @@ p {
   top: 85px;
   left: 0;
   width: 100%;
-  padding: 40px max(5vw, calc((100vw - 1280px) / 2));
+  padding: 40px clamp(16px, 2.5vw, 40px);
   background: #171426;
   border-bottom: 1px solid #ffffff30;
   display: grid;
@@ -2341,9 +2342,6 @@ p {
   }
 }
 @media (max-width: 650px) {
-  .container {
-    width: calc(100% - 40px);
-  }
   .premium-hero {
     padding-top: 45px;
   }

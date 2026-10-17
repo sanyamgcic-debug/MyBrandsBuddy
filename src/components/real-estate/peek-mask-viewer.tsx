@@ -39,7 +39,7 @@ export function PeekMaskViewer() {
 
   return (
     <section id="peek-mask" className="section-clean-white py-24 md:py-32 relative overflow-hidden architectural-grid-bg-light">
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 border-b border-black/10 pb-8">
           <div>
@@ -104,7 +104,7 @@ export function PeekMaskViewer() {
               alt="Futuristic luxury architectural building facade with sculptural curved balconies"
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="100vw"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
@@ -127,7 +127,7 @@ export function PeekMaskViewer() {
               alt="Revealed architectural interior via circular peek mask"
               fill
               className="object-cover object-center scale-105"
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="100vw"
             />
             {/* Subtle brand purple interior ambient tint */}
             <div className="absolute inset-0 bg-[#8b5cf6]/10 mix-blend-overlay" />

@@ -123,7 +123,7 @@ export function ScrollStack({ items, className }: ScrollStackProps) {
               }}
             >
               {/* Full-width professional card with clean hairline border and solid matte dark background */}
-              <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#100d20] p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#100d20] p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
                 {/* Subtle hairline top accent line */}
                 <div
                   className="absolute top-0 left-0 right-0 h-[2px]"

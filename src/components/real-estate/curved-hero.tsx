@@ -13,7 +13,7 @@ export function CurvedHero() {
         aria-hidden="true"
       />
 
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
 
         {/* Hero Typography: High Contrast, Dramatic Scale */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
@@ -61,7 +61,7 @@ export function CurvedHero() {
               fill
               priority
               className="object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="100vw"
             />
 
             {/* Cinematic Gradient Overlays */}

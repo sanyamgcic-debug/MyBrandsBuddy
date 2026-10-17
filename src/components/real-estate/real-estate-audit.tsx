@@ -73,11 +73,11 @@ export function RealEstateAudit() {
         aria-hidden="true"
       />
 
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 border-b border-white/10 pb-8">
           <div>
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1a1a1a] border border-[#8b5cf6]/30 text-[11px] font-mono tracking-widest uppercase text-white/90 mb-4 shadow-sm">
+            <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#1a1a1a] border border-[#8b5cf6]/30 text-[11px] font-mono tracking-widest uppercase text-white/90 mb-4 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-[#662d91] to-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
               <span className="text-[#c8a4ff] font-bold">PROPERTY MARKETING DIAGNOSTIC</span>
               <span className="text-white/30">•</span>
@@ -117,7 +117,7 @@ export function RealEstateAudit() {
                   key={item.id}
                   type="button"
                   onClick={() => setActiveCriterion(item.id)}
-                  className={`w-full text-left p-6 rounded-3xl border transition-all duration-300 cursor-pointer ${
+                  className={`w-full text-left p-4 sm:p-6 rounded-3xl border transition-all duration-300 cursor-pointer ${
                     isSelected
                       ? 'bg-[#14141a] border-[#8b5cf6] shadow-[0_0_30px_rgba(139,92,246,0.25)]'
                       : 'bg-[#0f0f14]/60 border-white/10 hover:border-white/20 hover:bg-[#14141a]/50'

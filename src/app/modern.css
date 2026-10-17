@@ -4,7 +4,7 @@
   --rocket: #8b5cf6;
   --rocket-deep: #662d91;
   --control-focus: #c8a4ff;
-  --container: 1280px;
+  --container: 100%;
 }
 body {
   font-size: 16px;
@@ -1048,9 +1048,6 @@ main {
 @media (max-width: 650px) {
   body {
     font-size: 15px;
-  }
-  .container {
-    width: calc(100% - 40px);
   }
   .brand {
     font-size: 19px;

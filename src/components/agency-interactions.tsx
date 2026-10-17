@@ -93,17 +93,21 @@ export function HeroEcosystem() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+      setIsSmallMobile(window.innerWidth < 420);
+    };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const r1 = isMobile ? 85 : 120;
-  const r2 = isMobile ? 130 : 185;
-  const r3 = isMobile ? 175 : 250;
+  const r1 = isSmallMobile ? 65 : isMobile ? 80 : 120;
+  const r2 = isSmallMobile ? 102 : isMobile ? 125 : 185;
+  const r3 = isSmallMobile ? 140 : isMobile ? 168 : 250;
 
   const getRadius = (orbit: number) => {
     switch (orbit) {

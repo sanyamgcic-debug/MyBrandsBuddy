@@ -6,7 +6,7 @@ import { Camera, Compass, Layers, Sparkles, TrendingUp, Users } from 'lucide-rea
 export function ArchitecturalPhilosophy() {
   return (
     <section id="philosophy" className="section-clean-white py-24 md:py-32 relative overflow-hidden architectural-grid-bg-light">
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Section Header: Pure White Space with High-Contrast Typography */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 border-b border-black/10 pb-8">
           <div>
@@ -32,7 +32,7 @@ export function ArchitecturalPhilosophy() {
         {/* Dramatic Curved Architectural Cards Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* Card 1: Sculptural Cantilever */}
-          <div className="p-8 sm:p-10 rounded-[36px] bg-[#070709] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+          <div className="p-6 sm:p-8 md:p-10 rounded-[36px] bg-[#070709] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#8b5cf6]/15 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
             <div>
               <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#8b5cf6] mb-8 group-hover:border-[#8b5cf6] transition-colors">
@@ -56,7 +56,7 @@ export function ArchitecturalPhilosophy() {
           </div>
 
           {/* Card 2: Asymmetric Arch Curve with Image Preview */}
-          <div className="curved-asymmetric-arch p-8 sm:p-10 bg-white border border-black/10 text-[#070709] shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#8b5cf6]/40 transition-colors">
+          <div className="curved-asymmetric-arch p-6 sm:p-8 md:p-10 bg-white border border-black/10 text-[#070709] shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-[#8b5cf6]/40 transition-colors">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-[#8b5cf6] text-white flex items-center justify-center mb-8 shadow-md">
                 <TrendingUp size={24} />
@@ -79,7 +79,7 @@ export function ArchitecturalPhilosophy() {
           </div>
 
           {/* Card 3: Deep Matte Monolith */}
-          <div className="p-8 sm:p-10 rounded-[36px] bg-[#070709] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+          <div className="p-6 sm:p-8 md:p-10 rounded-[36px] bg-[#070709] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#8b5cf6]/15 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
             <div>
               <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#8b5cf6] mb-8 group-hover:border-[#8b5cf6] transition-colors">

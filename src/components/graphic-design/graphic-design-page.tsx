@@ -26,7 +26,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
 
       {/* 2. Editorial Philosophy / Strategic Intro Section */}
       <section className="py-20 md:py-28 gd-body-section border-t border-white/10 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-3">
@@ -58,7 +58,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
 
           return (
             <section key={idx} className="py-20 md:py-28 bg-[#09090c] border-t border-white/10 relative">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="w-full px-4 sm:px-6 lg:px-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
                   <div>
                     <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-2">
@@ -106,7 +106,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
 
           return (
             <section key={idx} className="py-20 md:py-28 gd-body-section border-t border-white/10 relative">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="w-full px-4 sm:px-6 lg:px-10">
                 <div className="mb-16">
                   <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-2">
                     03 // Creative Process
@@ -142,7 +142,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
 
           return (
             <section key={idx} className="py-20 md:py-28 bg-[#09090c] border-t border-white/10 relative">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="w-full px-4 sm:px-6 lg:px-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-5">
                     <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-2">
@@ -186,7 +186,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
         if (section.heading === 'FAQs') {
           return (
             <section key={idx} className="py-20 md:py-28 gd-body-section border-t border-white/10 relative">
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
                 <div className="text-center mb-16">
                   <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-2">
                     05 // Clear Answers
@@ -230,7 +230,7 @@ export function GraphicDesignPage({ content, service }: GraphicDesignPageProps) 
 
       {/* 4. Cohesive Brand Consultation CTA Strip */}
       <section className="py-24 bg-gradient-to-b from-[#09090c] to-[#120d20] border-t border-[#8b5cf6]/20 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-10 text-center relative z-10">
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold block mb-3">
             Ready to Begin?
           </span>

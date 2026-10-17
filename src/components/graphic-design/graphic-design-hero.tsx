@@ -110,7 +110,7 @@ export function GraphicDesignHero() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white/50">
           <Link href="/services" className="hover:text-white transition-colors">

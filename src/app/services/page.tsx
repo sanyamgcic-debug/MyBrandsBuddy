@@ -22,7 +22,7 @@ export default function Services() {
         }
         description={editorialCopy.services.intro}
       />
-      <section className="section w-full px-3 sm:px-6 md:px-8 lg:px-10">
+      <section className="section w-full px-4 sm:px-6 lg:px-10">
         <div className="w-full">
           <ServiceDirectory overview />
         </div>

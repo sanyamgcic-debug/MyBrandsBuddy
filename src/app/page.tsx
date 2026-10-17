@@ -64,10 +64,10 @@ export default function Home() {
           <p>{agency.positioningBody}</p>
         </div>
       </section>
-      <section className="section capabilities-section w-full px-3 sm:px-6 md:px-8 lg:px-10" id="services">
+      <section className="section capabilities-section w-full px-4 sm:px-6 lg:px-10" id="services">
         <div className="w-full">
           <Reveal direction="up" distance={28}>
-            <div className="section-heading-row max-w-7xl mx-auto px-2 sm:px-4 mb-8">
+            <div className="section-heading-row w-full px-1 sm:px-2 mb-8">
               <SectionHeading
                 eyebrow="01 / Connected capabilities"
                 title={

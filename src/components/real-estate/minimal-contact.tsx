@@ -76,7 +76,7 @@ export function MinimalContact() {
         aria-hidden="true"
       />
 
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-10 relative z-10">
         {/* Section Header */}
         <div className="mb-12 border-b border-white/10 pb-8">
           <span className="inline-block text-xs font-mono uppercase tracking-[0.25em] text-[#8b5cf6] font-bold mb-3">
@@ -98,7 +98,7 @@ export function MinimalContact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           {/* Left Column: High-Contrast Minimal Form */}
           <div className="lg:col-span-7 flex flex-col">
-            <div className="p-8 sm:p-10 rounded-[36px] bg-[#0c0c10] border border-white/15 shadow-2xl relative flex-1 flex flex-col justify-between">
+            <div className="p-5 sm:p-8 md:p-10 rounded-[36px] bg-[#0c0c10] border border-white/15 shadow-2xl relative flex-1 flex flex-col justify-between">
               {isSubmitted ? (
                 <div className="py-16 text-center my-auto">
                   <div className="w-16 h-16 rounded-full bg-[#8b5cf6]/20 border border-[#8b5cf6] text-[#8b5cf6] flex items-center justify-center mx-auto mb-6">
