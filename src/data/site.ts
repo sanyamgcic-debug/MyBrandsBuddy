@@ -7,6 +7,8 @@ export const site = {
   whatsappLink: 'https://wa.me/919971234965?text=Hi%20MyBrandsBuddy%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services.',
   phone: '+91 99712 34965',
   phoneTel: 'tel:+919971234965',
+  facebook: 'https://www.facebook.com/share/1JDXr8GtAg/?mibextid=wwXIfr',
+  instagram: 'https://www.instagram.com/mybrandsbuddy?vrfl=bjk1NnQwcHZmajVh',
   tagline: 'The Best Buddy for Your Business',
   description:
     'Strategy, marketing, technology and creative production. MyBrandsBuddy helps businesses across India get found, get chosen and grow.',

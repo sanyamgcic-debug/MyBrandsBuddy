@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, useScroll, useSpring, useMotionValueEvent, useReducedMotion } from 'motion/react';
 import Image from 'next/image';
-import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 
 export function PageTools() {
   const { scrollY, scrollYProgress } = useScroll();
@@ -21,9 +20,6 @@ export function PageTools() {
         aria-hidden="true"
         style={{ scaleX: reduced ? scrollYProgress : smooth }}
       />
-
-      {/* Floating WhatsApp Action Button for all pages */}
-      <WhatsAppButton />
 
       <button
         type="button"
