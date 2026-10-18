@@ -1,0 +1,166 @@
+/* Creative Vision Video - Seamless Editorial Integration */
+
+.portalContainer {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  height: 400px;
+  margin-top: 32px;
+  margin-left: -20px;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Subtle ambient color wash echoing video hues and softly bleeding into the section */
+.ambientWash {
+  position: absolute;
+  inset: -30px -40px;
+  background: radial-gradient(
+    ellipse 70% 60% at 40% 50%,
+    rgba(125, 80, 220, 0.10) 0%,
+    rgba(220, 110, 200, 0.04) 40%,
+    rgba(238, 234, 242, 0) 70%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Masked video wrapper with organic multi-edge fade:
+   - All 4 rectangular boundaries reach 0 opacity before the container edge
+   - Strongest fade on the right to dissolve smoothly before the right-side list
+   - Soft fade on the top to preserve clean separation around text
+   - Seamless blend at the bottom into the section floor
+   - Gentle left feathering
+   - Zero card borders, box-shadows, or container rectangles
+*/
+.videoWrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  mask-image: radial-gradient(
+    ellipse 52% 56% at 42% 50%,
+    #000000 18%,
+    rgba(0, 0, 0, 0.92) 36%,
+    rgba(0, 0, 0, 0.55) 54%,
+    rgba(0, 0, 0, 0.18) 68%,
+    transparent 80%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 52% 56% at 42% 50%,
+    #000000 18%,
+    rgba(0, 0, 0, 0.92) 36%,
+    rgba(0, 0, 0, 0.55) 54%,
+    rgba(0, 0, 0, 0.18) 68%,
+    transparent 80%
+  );
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 49%;
+  transform: scale(1.30);
+  transform-origin: 45% 49%;
+  opacity: 0.95;
+  filter: saturate(1.02);
+  border: none;
+  outline: none;
+  display: block;
+}
+
+.posterElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 49%;
+  transform: scale(1.30);
+  transform-origin: 45% 49%;
+  opacity: 0.95;
+  filter: saturate(1.02);
+  display: block;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (min-width: 1600px) {
+  .portalContainer {
+    max-width: 720px;
+    height: 420px;
+    margin-left: -28px;
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .portalContainer {
+    max-width: 640px;
+    height: 380px;
+    margin-left: -16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .portalContainer {
+    max-width: 580px;
+    height: 350px;
+    margin-left: -8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .portalContainer {
+    max-width: 520px;
+    height: 330px;
+    margin-left: 0;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portalContainer {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    margin: 28px auto 0;
+  }
+  .videoElement,
+  .posterElement {
+    transform: scale(1.22);
+    object-position: center 49%;
+  }
+  .videoWrapper {
+    mask-image: radial-gradient(
+      ellipse 54% 56% at 50% 50%,
+      #000000 20%,
+      rgba(0, 0, 0, 0.92) 38%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.15) 70%,
+      transparent 82%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 54% 56% at 50% 50%,
+      #000000 20%,
+      rgba(0, 0, 0, 0.92) 38%,
+      rgba(0, 0, 0, 0.5) 58%,
+      rgba(0, 0, 0, 0.15) 70%,
+      transparent 82%
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .portalContainer {
+    height: 250px;
+    margin: 22px auto 0;
+  }
+  .videoElement,
+  .posterElement {
+    transform: scale(1.18);
+  }
+}

@@ -11,6 +11,7 @@ import { AgencyCTA } from '@/components/agency-cta';
 import { Reveal } from '@/components/reveal';
 import { ArticleCard } from '@/components/cards';
 import { agency } from '@/data/agency';
+import { CreativeVisionPortal } from '@/components/creative-vision-portal';
 import { articles } from '@/data/blog';
 import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata(
@@ -140,6 +141,7 @@ export default function Home() {
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
             </Reveal>
+            <CreativeVisionPortal />
           </div>
           <div className="principle-list">
             {agency.principles.map((item, i) => (
